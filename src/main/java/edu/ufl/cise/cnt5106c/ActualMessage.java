@@ -1,71 +1,72 @@
 package edu.ufl.cise.cnt5106c;
-/**
- * Created by Jiya on 2/16/17.
- */
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.Arrays;
+import java.io.*;
+import java.nio.*;
+import java.util.*;
 
-public class ActualMessage {
-    public int msgLength;
-    public int msgType;
-    public byte[] msgPayload;
+/*
+* This is the Actual Message class that has 3 class variables
+* @param message length @param message type @param message payload
+* This Class handles byte array to (int)piece conversion of size 4 and back
+*
+* */
 
-    ActualMessage() {
-        msgLength = 0;
-        msgType = -1;
-        msgPayload = null;
+public class ActualMessage{
+    public int length;
+    public int type;
+    public byte[] payload;
+
+    ActualMessage(int type, byte[] payload){
+        /*Constructor that set the message length according to payload size */
+        this.length = (payload == null ? 0 : payload.length) + 1;
+        this.payload = payload;
+        this.type = type;
     }
 
-    ActualMessage(int type, byte[] payload) {
-        msgLength = (payload == null ? 0 : payload.length) + 1; // for the _type
-        //if(payload.length > 0){
-        msgPayload = payload;
-        //  msgLength = payload.length;
-        //}
-        msgType = type;
-    }
-
-    public void read(DataInputStream in ) throws IOException {
-        if ((msgPayload != null) && (msgPayload.length) > 0) { in .readFully(msgPayload, 0, msgPayload.length);
+    public void read (DataInputStream in) throws IOException {
+        /*Takes an DataInputStream Interface variable and
+         * reads the byte array(payload) till the message length
+         */
+        if ((payload != null) && (payload.length) > 0) {
+            in.readFully(payload, 0, payload.length);
         }
     }
 
-    public void write(DataOutputStream out) throws IOException {
-        out.writeInt(msgLength);
-        out.writeInt(msgType);
-        if ((msgPayload != null) && (msgPayload.length > 0)) {
-            out.write(msgPayload, 0, msgPayload.length);
+    public void write (DataOutputStream out) throws IOException {
+         /*Takes an DataOutputStream Interface variable
+         and writes the byte array(payload) till the message length
+         */
+        out.writeInt(length);
+        out.writeInt(type);
+        if ((payload != null) && (payload.length > 0)) {
+            out.write(payload, 0, payload.length);
         }
     }
 
-    public int getPieceIndex() {
-        return ByteBuffer.wrap(Arrays.copyOfRange(msgPayload, 0, 4)).getInt();
+    public int getPieceIndex(){
+         /* Reads 4 bytes of the message Payload and converts it into and int and returns   */
+        return ByteBuffer.wrap(Arrays.copyOfRange(payload, 0, 4)).getInt();
     }
 
     public byte[] getContent() {
-        int len = msgPayload.length;
-        return ((msgPayload == null) || (len <= 4)) ? null : Arrays.copyOfRange(msgPayload, 4, len);
+        /*Check if the content of messagepayload is less than 4, returns the next of*/
+        int len = payload.length;
+        return ((payload == null) || (len <= 4)) ? null : Arrays.copyOfRange(payload, 4, len);
     }
 
-    public static byte[] merge(int index, byte[] temp) {
-        byte[] piece = null;
-        if (temp == null)
+    public static byte[] merge (int index, byte[] temp) {
+        /*
+        * Merges the piece with index passed and the byte array*/
+        byte[] piece;
+        if(temp == null)
             piece = new byte[4];
         else
             piece = new byte[4 + temp.length];
-
+        //converts the piece index into a byte array
         System.arraycopy(ByteBuffer.allocate(4).putInt(index).array(), 0, piece, 0, 4);
-
-        System.arraycopy(temp, 0, piece, 4, temp.length);
-
-        return piece;
+        System.arraycopy(temp, 0, piece, 4, temp.length); return piece;
     }
 
-    public static byte[] getIndexBytes(int pieceIndex) {
-        return ByteBuffer.allocate(4).putInt(pieceIndex).array();
-    }
+
+
 }

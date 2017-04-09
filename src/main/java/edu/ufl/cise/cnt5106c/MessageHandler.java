@@ -16,31 +16,31 @@ public class MessageHandler {
     final static int PIECE = 7;
 
     private boolean isChokedByRemoteNeighbor;
-    private final int remoteNeighborID;
-    private final FileManager fileMgr;
-    private final PeerManager neighborMgr;
+    private final int remote_Id;
+    private final FileManager file_Manager;
+    private final PeerManager neighbor_Manager;
     private final EventLogger eventLogger;
 
-    MessageHandler(int remoteNeighborId, FileManager fileMgr, PeerManager neighborMgr, EventLogger eventLogger) {
+    MessageHandler(int remoteNeighborId, FileManager file_Manager, PeerManager neighbor_Manager, EventLogger eventLogger) {
         isChokedByRemoteNeighbor = true;
-        this.fileMgr = fileMgr;
-        this.neighborMgr = neighborMgr;
-        this.remoteNeighborID = remoteNeighborId;
+        this.file_Manager = file_Manager;
+        this.neighbor_Manager = neighbor_Manager;
+        this.remote_Id = remoteNeighborId;
         this.eventLogger = eventLogger;
     }
 
     private ActualMessage requestPiece() {
         if (isChokedByRemoteNeighbor)
-            LogHelper.getLogger().debug("No parts can be requested to " + remoteNeighborID);
+            LogHelper.getLogger().debug("No parts can be requested to " + remote_Id);
         else {
             BitSet b = new BitSet();
-            AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+            AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
             if (peer != null) {
                 b = (BitSet) peer._receivedParts.clone();
             }
-            int pieceIndex = fileMgr.getPartToRequest(b);
+            int pieceIndex = file_Manager.getPartToRequest(b);
             if (pieceIndex >= 0) {
-                LogHelper.getLogger().debug("Requesting part " + pieceIndex + " to " + remoteNeighborID);
+                LogHelper.getLogger().debug("Requesting part " + pieceIndex + " to " + remote_Id);
                 return new ActualMessage(REQUEST, ByteBuffer.allocate(4).putInt(pieceIndex).array());
             }
         }
@@ -48,69 +48,69 @@ public class MessageHandler {
     }
 
     public ActualMessage process(HandShakeMessage handshake) {
-        BitSet bitset = fileMgr.getReceivedParts();
+        BitSet bitset = file_Manager.getReceivedParts();
         return !bitset.isEmpty() ? new ActualMessage(BITFIELD, bitset.toByteArray()) : null;
     }
 
     public ActualMessage process(ActualMessage message) {
-        switch (message.msgType) {
+        switch (message.type) {
             case CHOKE:
             {
                 isChokedByRemoteNeighbor = true;
-                eventLogger.choke(remoteNeighborID);
+                eventLogger.choke(remote_Id);
                 return null;
             }
             case UNCHOKE:
             {
                 isChokedByRemoteNeighbor = false;
-                eventLogger.unchoke(remoteNeighborID);
+                eventLogger.unchoke(remote_Id);
                 return requestPiece();
             }
             case INTERESTED:
             {
-                eventLogger.interested(remoteNeighborID);
-                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                eventLogger.interested(remote_Id);
+                AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null)
                     peer._interested.set(true);
                 return null;
             }
             case NOTINTERESTED:
             {
-                eventLogger.notInterested(remoteNeighborID);
-                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                eventLogger.notInterested(remote_Id);
+                AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null)
                     peer._interested.set(false);
                 return null;
             }
             case HAVE:
             {
-                ActualMessage have = (ActualMessage) message;
+                ActualMessage have =  message;
                 final int pieceId = have.getPieceIndex();
-                eventLogger.have(remoteNeighborID, pieceId);
-                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                eventLogger.have(remote_Id, pieceId);
+                AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null) {
                     peer._receivedParts.set(pieceId);
                 }
-                neighborMgr.neighborsCompletedDownload();
-                return fileMgr.getReceivedParts().get(pieceId) == true ? new ActualMessage(NOTINTERESTED, null) : new ActualMessage(INTERESTED, null);
+                neighbor_Manager.neighborsCompletedDownload();
+                return file_Manager.getReceivedParts().get(pieceId) == true ? new ActualMessage(NOTINTERESTED, null) : new ActualMessage(INTERESTED, null);
             }
             case BITFIELD:
             {
                 ActualMessage bitfield = (ActualMessage) message;
-                BitSet bitset = BitSet.valueOf(bitfield.msgPayload);
-                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                BitSet bitset = BitSet.valueOf(bitfield.payload);
+                AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null) {
                     peer._receivedParts = bitset;
                 }
-                neighborMgr.neighborsCompletedDownload();
-                bitset.andNot(fileMgr.getReceivedParts());
+                neighbor_Manager.neighborsCompletedDownload();
+                bitset.andNot(file_Manager.getReceivedParts());
                 return bitset.isEmpty() == true ? new ActualMessage(NOTINTERESTED, null) : new ActualMessage(INTERESTED, null);
             }
             case REQUEST:
             {
                 ActualMessage request = (ActualMessage) message;
-                if (neighborMgr.canUploadToPeer(remoteNeighborID)) {
-                    byte[] piece = fileMgr.getPiece(request.getPieceIndex());
+                if (neighbor_Manager.canUploadToPeer(remote_Id)) {
+                    byte[] piece = file_Manager.getPiece(request.getPieceIndex());
                     if (piece != null) {
                         byte[] mergedPiece = request.merge(request.getPieceIndex(), piece);
                         return new ActualMessage(PIECE, mergedPiece);
@@ -120,13 +120,13 @@ public class MessageHandler {
             }
             case PIECE:
             {
-                ActualMessage piece = (ActualMessage) message;
-                fileMgr.addPart(piece.getPieceIndex(), piece.getContent());
-                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                ActualMessage piece =  message;
+                file_Manager.addPart(piece.getPieceIndex(), piece.getContent());
+                AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null) {
                     peer._bytesDownloadedFrom.addAndGet(piece.getContent().length);
                 }
-                eventLogger.pieceDownloadedMessage(remoteNeighborID, piece.getPieceIndex(), fileMgr.getNumberOfReceivedParts());
+                eventLogger.pieceDownloadedMessage(remote_Id, piece.getPieceIndex(), file_Manager.getNumberOfReceivedParts());
                 return requestPiece();
             }
         }

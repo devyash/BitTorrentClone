@@ -1,57 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="427dd99e-bd53-4c83-b838-177a05ae6b2e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
+    <list default="true" id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/conf/CommonProperties.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/conf/PeerInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/conf/RemotePeerInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/thumb_IMG_2087_1024.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/FileManagerListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/PeerManagerListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/conf/CommonProperties$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/conf/CommonProperties.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/conf/PeerInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/conf/RemotePeerInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/ConnectionHandler$ReqTask.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/ConnectionHandler$ThreadImplementer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/OnlyType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/Payload.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CNT5106C-1.0.jar" afterPath="$PROJECT_DIR$/target/CNT5106C-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/ActualMessage.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/ActualMessage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/ConnectionHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/ConnectionHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/FileManager.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/FileManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/LogHelper.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/LogHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/MessageHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/MessageHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/PeerManager$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/PeerManager$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/PeerManager$OptimisticUnchoker.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/PeerManager$OptimisticUnchoker.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/PeerManager.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/PeerManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/Process.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/Process.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/peerProcess.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/peerProcess.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CNT5106C.iml" afterPath="$PROJECT_DIR$/CNT5106C.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/build.xml" afterPath="$PROJECT_DIR$/build/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ActualMessage.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ActualMessage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageHandler.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Payload.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Payload.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Process.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Process.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/edu/ufl/cise/cnt5106c/conf/logger.properties" afterPath="$PROJECT_DIR$/src/main/resources/edu/ufl/cise/cnt5106c/conf/logger.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start1001.bat" afterPath="$PROJECT_DIR$/start1001.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start1002.bat" afterPath="$PROJECT_DIR$/start1002.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/conf/logger.properties" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/conf/logger.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
@@ -64,65 +89,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Makefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-48">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActualMessage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ActualMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-59">
-              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdjacentPeers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/AdjacentPeers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Payload.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Payload.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectionHandler.java" pinned="false" current-in-tab="false">
+    <leaf>
+      <file leaf-file-name="ConnectionHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="123" column="24" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1000">
-              <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="500">
+              <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#5368#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3477#3478#0" expanded="true" />
+                <element signature="e#3502#3503#0" expanded="true" />
+                <marker date="1491756994171" expanded="false" signature="3403:3408" ph=" { " />
+                <marker date="1491756994171" expanded="false" signature="3425:3428" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,17 +111,68 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>msgLength</find>
-      <find>msgType</find>
-      <find>msgPayload</find>
+      <find>CNT5106C</find>
+      <find>remoteIsChoked</find>
+      <find>ThreadImplementer</find>
+      <find>remoteNeighborID</find>
+      <find>message_Type</find>
+      <find>message_Length</find>
+      <find>message_Payload</find>
+      <find>isRemoteChoked</find>
+      <find>remotechokedflag</find>
+      <find>rcvdHandshake</find>
+      <find>recieved_Handshake</find>
+      <find>myLocalID</find>
+      <find>out</find>
+      <find>fileMgr</find>
+      <find>_fileMgr</find>
+      <find>request_Message</find>
+      <find>o</find>
+      <find>_</find>
+      <find>_o</find>
+      <find>_out</find>
+      <find>_remotePeerId</find>
+      <find>remoteId</find>
+      <find>remotePeerId</find>
+      <find>_message</find>
+      <find>ReqTask</find>
+      <find>_request</find>
+      <find>neighborMgr</find>
+      <find>isConnectingNeighbor</find>
+      <find>expectedRemoteNeighborID</find>
+      <find>remote_Id</find>
     </findStrings>
     <replaceStrings>
       <replace />
-      <replace>message-length</replace>
-      <replace>message_Length</replace>
       <replace>message_Type</replace>
       <replace>message_Payload</replace>
+      <replace>BitTorrentClone</replace>
+      <replace>isRemoteChoked</replace>
+      <replace>ImplementingThread</replace>
+      <replace>type</replace>
+      <replace>length</replace>
+      <replace>payload</replace>
+      <replace>remotechokedflag</replace>
+      <replace>is_Remote_Choked_Flag</replace>
+      <replace>recieved_Handshake</replace>
+      <replace>received_Handshake</replace>
+      <replace>my_Id</replace>
+      <replace>file_Manager</replace>
+      <replace>request</replace>
+      <replace>out</replace>
+      <replace>remotePeerId</replace>
+      <replace>remote_Id</replace>
+      <replace>message</replace>
+      <replace>request_Message</replace>
+      <replace>RequestTask</replace>
+      <replace>neighbor_Manager</replace>
+      <replace>is_Conn_Neighbor_Flag</replace>
+      <replace>expected_Neighbor_Id</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -154,11 +185,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileManagerListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/edu/ufl/cise/cnt5106c/conf/logger.properties" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" />
+        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ActualMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Payload.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionHandler.java" />
       </list>
     </option>
   </component>
@@ -177,7 +209,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="CNT5106C" />
+          <option name="myItemId" value="BitTorrentClone" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -187,7 +219,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="CNT5106C" />
+          <option name="myItemId" value="BitTorrentClone" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -218,8 +250,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -247,6 +277,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -278,11 +316,10 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -529,11 +566,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="427dd99e-bd53-4c83-b838-177a05ae6b2e" name="Default" comment="" />
-      <created>1491599548033</created>
+      <changelist id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="" />
+      <created>1491753904685</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1491599548033</updated>
+      <updated>1491753904685</updated>
     </task>
     <servers />
   </component>
@@ -549,129 +586,174 @@
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2579666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-    <buildFile url="file://$PROJECT_DIR$/pom.xml">
-      <expanded value="true" />
-    </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileManager.java">
+    <entry file="file://$PROJECT_DIR$/conf/RemotePeerInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileManagerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileManagerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
+        <state relative-caret-position="-347">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionHandler.java">
+    <entry file="file://$PROJECT_DIR$/conf/PeerInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="123" column="24" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/CommonProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/edu/ufl/cise/cnt5106c/conf/logger.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1600">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+        <state relative-caret-position="1660">
+          <caret line="86" column="37" lean-forward="false" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/AdjacentPeers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="380">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Payload.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/EventLogger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        <state relative-caret-position="380">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="13" column="80" lean-forward="false" selection-start-line="13" selection-start-column="80" selection-end-line="13" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ActualMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-59">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="380">
+          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
           <folding>
+            <element signature="e#0#5368#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#3502#3503#0" expanded="true" />
+            <marker date="1491756994171" expanded="false" signature="3403:3408" ph=" { " />
+            <marker date="1491756994171" expanded="false" signature="3425:3428" ph=" }" />
           </folding>
         </state>
       </provider>
