@@ -14,7 +14,7 @@ public class PeerManager implements Runnable {
         final Collection<AdjacentPeers> _optmisticallyUnchokedPeers =
                 Collections.newSetFromMap(new ConcurrentHashMap<AdjacentPeers, Boolean>());
 
-        OptimisticUnchoker(ReadConfig conf) {
+        OptimisticUnchoker(peerProcess conf) {
             super("OptimisticUnchoker");
             _numberOfOptimisticallyUnchokedNeighbors = 1;
             _optimisticUnchokingInterval = conf.NumberOfPreferredNeighbors* 1000;
@@ -68,7 +68,7 @@ public class PeerManager implements Runnable {
     private final Collection<PeerManagerListener> _listeners = new LinkedList<>();
     private final AtomicBoolean _randomlySelectPreferred = new AtomicBoolean(false);
 
-    PeerManager(int peerId, Collection<AdjacentPeers> peers, int bitmapsize, ReadConfig conf) {
+    PeerManager(int peerId, Collection<AdjacentPeers> peers, int bitmapsize, peerProcess conf) {
         _peers.addAll(peers);
         _numberOfPreferredNeighbors = conf.NumberOfPreferredNeighbors;
         _unchokingInterval = conf.UnchokingInterval * 1000;
