@@ -10,7 +10,7 @@ public class PeerManager implements Runnable {
     private final EventLogger _eventLogger;
     private final List < AdjacentPeers > _peers = new ArrayList < > ();
     private final Collection < AdjacentPeers > _preferredPeers = new HashSet < > ();
-    private final OptimisticUnchoker _optUnchoker;
+    private final OptimisticUnevent_Choker _optUnevent_Choker;
     private final Collection < Listener > _listeners = new LinkedList < > ();
     public peerProcess pProcess;
     public final AtomicBoolean _randomlySelectPreferred = new AtomicBoolean(false);
@@ -18,7 +18,7 @@ public class PeerManager implements Runnable {
     PeerManager(int peerId, Collection < AdjacentPeers > peers, int bitmapsize, peerProcess conf) {
         _peers.addAll(peers);
         pProcess = conf;
-        _optUnchoker = new OptimisticUnchoker(pProcess.NumberOfPreferredNeighbors * 1000);
+        _optUnevent_Choker = new OptimisticUnevent_Choker(pProcess.NumberOfPreferredNeighbors * 1000);
         _bitmapsize = bitmapsize;
         _eventLogger = new EventLogger(peerId, LogHelper.getLogger());
     }
@@ -27,7 +27,7 @@ public class PeerManager implements Runnable {
     synchronized boolean canUploadToPeer(int peerId) {
         AdjacentPeers peerInfo = new AdjacentPeers(peerId, "127.0.0.1", 0, false);
         return (_preferredPeers.contains(peerInfo) ||
-                _optUnchoker._optmisticallyUnchokedPeers.contains(peerInfo));
+                _optUnevent_Choker._optmisticallyUnevent_ChokedPeers.contains(peerInfo));
     }
 
     //cant replace this
@@ -64,22 +64,22 @@ public class PeerManager implements Runnable {
 
     @Override
     public void run() {
-        _optUnchoker.start();
+        _optUnevent_Choker.start();
         while (true) {
             try {
                 Thread.sleep(pProcess.UnchokingInterval * 1000);
             } catch (InterruptedException ex) {}
-            ArrayList < AdjacentPeers > interestedPeers = new ArrayList < > ();
+            ArrayList < AdjacentPeers > event_InterestedPeers = new ArrayList < > ();
             for (AdjacentPeers peer: _peers) {
-                if (peer.interested.get()) {
-                    interestedPeers.add(peer);
+                if (peer.event_Interested.get()) {
+                    event_InterestedPeers.add(peer);
                 }
             }
             if (_randomlySelectPreferred.get()) {
                 LogHelper.getLogger().debug("selecting preferred peers randomly");
-                Collections.shuffle(interestedPeers);
+                Collections.shuffle(event_InterestedPeers);
             } else {
-                Collections.sort(interestedPeers, new Comparator() {
+                Collections.sort(event_InterestedPeers, new Comparator() {
                     @Override
                     public int compare(Object o1, Object o2) {
                         AdjacentPeers ri1 = (AdjacentPeers)(o1);
@@ -90,7 +90,7 @@ public class PeerManager implements Runnable {
             }
             //TODO change names
             Collection < AdjacentPeers > optUnchokablePeers = null;
-            HashSet < Integer > chokedPeersIDs = new HashSet < > ();
+            HashSet < Integer > event_ChokedPeersIDs = new HashSet < > ();
             HashSet < Integer > preferredNeighborsIDs = new HashSet < > ();
             HashMap < Integer, Long > downloadedBytes = new HashMap < > ();
 
@@ -100,46 +100,46 @@ public class PeerManager implements Runnable {
                     peer.bytes_Downloaded_From.set(0);
                 }
                 _preferredPeers.clear();
-                _preferredPeers.addAll(interestedPeers.subList(0, Math.min(pProcess.NumberOfPreferredNeighbors, interestedPeers.size())));
+                _preferredPeers.addAll(event_InterestedPeers.subList(0, Math.min(pProcess.NumberOfPreferredNeighbors, event_InterestedPeers.size())));
                 if (_preferredPeers.size() > 0) {
-                    _eventLogger.updatePreferredNeighbor(LogHelper.getNeighborsAsString(_preferredPeers));
+                    _eventLogger.event_Preferred_Neighbors(LogHelper.getNeighborsAsString(_preferredPeers));
                 }
-                List < AdjacentPeers > chokedPeers = new LinkedList < > (_peers);
-                chokedPeers.removeAll(_preferredPeers);
+                List < AdjacentPeers > event_ChokedPeers = new LinkedList < > (_peers);
+                event_ChokedPeers.removeAll(_preferredPeers);
                 Set < Integer > ids = new HashSet < > ();
                 for (AdjacentPeers peer: _preferredPeers) {
                     ids.add(peer.id);
                 }
-                chokedPeersIDs.addAll(ids);
-                if (pProcess.NumberOfPreferredNeighbors >= interestedPeers.size()) {
+                event_ChokedPeersIDs.addAll(ids);
+                if (pProcess.NumberOfPreferredNeighbors >= event_InterestedPeers.size()) {
                     optUnchokablePeers = new ArrayList < > ();
                 } else {
-                    optUnchokablePeers = interestedPeers.subList(pProcess.NumberOfPreferredNeighbors, interestedPeers.size());
+                    optUnchokablePeers = event_InterestedPeers.subList(pProcess.NumberOfPreferredNeighbors, event_InterestedPeers.size());
                 }
                 preferredNeighborsIDs.addAll(ids);
             }
             for (Entry < Integer, Long > entry: downloadedBytes.entrySet()) {
                 String PREFERRED = preferredNeighborsIDs.contains(entry.getKey()) ? " *" : "";
-                LogHelper.getLogger().debug("BYTES DOWNLOADED FROM  PEER " + entry.getKey() + ": " + entry.getValue() + " (INTERESTED PEERS: " + interestedPeers.size() + ": " + LogHelper.getNeighborsAsString(interestedPeers) + ")\t" + PREFERRED);
+                LogHelper.getLogger().debug("BYTES DOWNLOADED FROM  PEER " + entry.getKey() + ": " + entry.getValue() + " (INTERESTED PEERS: " + event_InterestedPeers.size() + ": " + LogHelper.getNeighborsAsString(event_InterestedPeers) + ")\t" + PREFERRED);
             }
             for (Listener listener: _listeners) {
-                listener.chockedPeers(chokedPeersIDs);
+                listener.chockedPeers(event_ChokedPeersIDs);
                 listener.unchockedPeers(preferredNeighborsIDs);
             }
             if (optUnchokablePeers != null) {
-                _optUnchoker._chokedNeighbors.clear();
-                _optUnchoker._chokedNeighbors.addAll(optUnchokablePeers);
+                _optUnevent_Choker._event_ChokedNeighbors.clear();
+                _optUnevent_Choker._event_ChokedNeighbors.addAll(optUnchokablePeers);
             }
         }
     }
 
-    class OptimisticUnchoker extends Thread {
+    class OptimisticUnevent_Choker extends Thread {
         public int _optimisticUnchokingInterval;
-        private final List < AdjacentPeers > _chokedNeighbors = new ArrayList < > ();
-        final Collection < AdjacentPeers > _optmisticallyUnchokedPeers = Collections.newSetFromMap(new ConcurrentHashMap < AdjacentPeers, Boolean > ());
+        private final List < AdjacentPeers > _event_ChokedNeighbors = new ArrayList < > ();
+        final Collection < AdjacentPeers > _optmisticallyUnevent_ChokedPeers = Collections.newSetFromMap(new ConcurrentHashMap < AdjacentPeers, Boolean > ());
 
-        OptimisticUnchoker(int interval) {
-            super("OptimisticUnchoker");
+        OptimisticUnevent_Choker(int interval) {
+            super("OptimisticUnevent_Choker");
             _optimisticUnchokingInterval = interval;
         }
 
@@ -150,22 +150,22 @@ public class PeerManager implements Runnable {
                     Thread.sleep(_optimisticUnchokingInterval);
                 } catch (InterruptedException ex) {}
                 synchronized(this) {
-                    //TODO: CHANGE COMMENT: Randomly shuffle the remaining neighbors, and select some to optimistically unchoke
-                    if (!_chokedNeighbors.isEmpty()) {
-                        Collections.shuffle(_chokedNeighbors);
-                        _optmisticallyUnchokedPeers.clear();
-                        _optmisticallyUnchokedPeers.addAll(_chokedNeighbors.subList(0,
-                                Math.min(1, _chokedNeighbors.size())));
+                    //TODO: CHANGE COMMENT: Randomly shuffle the remaining neighbors, and select some to optimistically event_Unchoke
+                    if (!_event_ChokedNeighbors.isEmpty()) {
+                        Collections.shuffle(_event_ChokedNeighbors);
+                        _optmisticallyUnevent_ChokedPeers.clear();
+                        _optmisticallyUnevent_ChokedPeers.addAll(_event_ChokedNeighbors.subList(0,
+                                Math.min(1, _event_ChokedNeighbors.size())));
                     }
                 }
-                if (_chokedNeighbors.size() > 0) {
-                    LogHelper.getLogger().debug("STATE: OPT UNCHOKED(1):" + LogHelper.getNeighborsAsString(_optmisticallyUnchokedPeers));
-                    _eventLogger.updateOptimisticallyUnchokedNeighbor(LogHelper.getNeighborsAsString(_optmisticallyUnchokedPeers));
+                if (_event_ChokedNeighbors.size() > 0) {
+                    LogHelper.getLogger().debug("STATE: OPT UNCHOKED(1):" + LogHelper.getNeighborsAsString(_optmisticallyUnevent_ChokedPeers));
+                    _eventLogger.event_Optimistically_Unchoked_Neighbor(LogHelper.getNeighborsAsString(_optmisticallyUnevent_ChokedPeers));
                 }
                 //already simplified
                 for (Listener listener: _listeners) {
                     Set < Integer > ids = new HashSet < > ();
-                    for (AdjacentPeers peer: _optmisticallyUnchokedPeers) {
+                    for (AdjacentPeers peer: _optmisticallyUnevent_ChokedPeers) {
                         ids.add(peer.id);
                     }
                     listener.unchockedPeers(ids);

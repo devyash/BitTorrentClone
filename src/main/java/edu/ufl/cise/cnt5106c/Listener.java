@@ -9,6 +9,6 @@ public interface Listener {
     public void fileCompleted();
     public void pieceArrived (int partIdx);
     public void neighborsCompletedDownload();
-    public void chockedPeers (Collection<Integer> chokedPeersIds);
-    public void unchockedPeers (Collection<Integer> unchokedPeersIds);
+    public void chockedPeers (Collection<Integer> event_ChokedPeersIds);
+    public void unchockedPeers (Collection<Integer> event_UnchokedPeersIds);
 }

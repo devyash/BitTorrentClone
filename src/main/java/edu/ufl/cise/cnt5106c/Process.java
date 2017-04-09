@@ -58,7 +58,7 @@ public class Process implements Runnable, Listener {
             file_Manager.splitFile();
             file_Manager.setAllParts();
         } else {
-            LogHelper.getLogger().debug("Peer does not have file");
+            LogHelper.getLogger().debug("Peer does not event_have file");
         }
 
         // Start PeerMnager Thread
@@ -142,7 +142,7 @@ public class Process implements Runnable, Listener {
     @Override
     public synchronized void fileCompleted() {
         LogHelper.getLogger().debug("local peer completed download");
-        _eventLogger.fileDownloadedMessage();
+        _eventLogger.event_File_Downloaded();
         _fileCompleted.set(true);
         if (_fileCompleted.get() && _peersFileCompleted.get()) {
             // The process can quit
@@ -185,9 +185,9 @@ public class Process implements Runnable, Listener {
     }
 
     @Override
-    public synchronized void chockedPeers(Collection < Integer > chokedPeersIds) {
+    public synchronized void chockedPeers(Collection < Integer > event_ChokedPeersIds) {
         for (ConnectionHandler ch: _connHandlers) {
-            if (chokedPeersIds.contains(ch.getRemoteNeighborId())) {
+            if (event_ChokedPeersIds.contains(ch.getRemoteNeighborId())) {
                 LogHelper.getLogger().debug("Choking " + ch.getRemoteNeighborId());
                 ch.send(new ActualMessage(CHOKE, null));
             }
@@ -195,9 +195,9 @@ public class Process implements Runnable, Listener {
     }
 
     @Override
-    public synchronized void unchockedPeers(Collection < Integer > unchokedPeersIds) {
+    public synchronized void unchockedPeers(Collection < Integer > event_UnchokedPeersIds) {
         for (ConnectionHandler ch: _connHandlers) {
-            if (unchokedPeersIds.contains(ch.getRemoteNeighborId())) {
+            if (event_UnchokedPeersIds.contains(ch.getRemoteNeighborId())) {
                 LogHelper.getLogger().debug("Unchoking " + ch.getRemoteNeighborId());
                 ch.send(new ActualMessage(UNCHOKE, null));
             }

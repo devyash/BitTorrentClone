@@ -1,35 +1,35 @@
 2017-04-09 12:09:47 : Peer 1001 is already connected from peer 1002 .
-2017-04-09 12:09:48 : Peer 1001 received the 'interested' message from 1002.
+2017-04-09 12:09:48 : Peer 1001 received the 'event_Interested' message from 1002.
 2017-04-09 12:09:49 : Peer 1001 has preferred neighbors 1002
-2017-04-09 12:09:49 : Peer 1001 received the 'have' message for the piece 6 from 1002 .
-2017-04-09 12:09:49 : Peer 1001 received the 'have' message for the piece 18 from 1002 .
-2017-04-09 12:09:49 : Peer 1001 received the 'have' message for the piece 23 from 1002 .
-2017-04-09 12:09:49 : Peer 1001 received the 'have' message for the piece 3 from 1002 .
-2017-04-09 12:09:49 : Peer 1001 received the 'have' message for the piece 9 from 1002 .
-2017-04-09 12:09:49 : Peer 1001 received the 'have' message for the piece 5 from 1002 .
-2017-04-09 12:09:49 : Peer 1001 received the 'have' message for the piece 0 from 1002 .
-2017-04-09 12:09:49 : Peer 1001 received the 'have' message for the piece 12 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 13 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 25 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 17 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 11 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 15 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 1 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 20 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 2 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 7 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 26 from 1002 .
-2017-04-09 12:09:50 : Peer 1001 received the 'have' message for the piece 4 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'have' message for the piece 19 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'have' message for the piece 24 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'have' message for the piece 21 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'have' message for the piece 22 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'have' message for the piece 8 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'have' message for the piece 10 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'have' message for the piece 14 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'have' message for the piece 16 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'have' message for the piece 27 from 1002 .
-2017-04-09 12:09:51 : Peer 1001 received the 'not interested' message from 1002.
+2017-04-09 12:09:49 : Peer 1001 received the 'event_have' message for the piece 6 from 1002 .
+2017-04-09 12:09:49 : Peer 1001 received the 'event_have' message for the piece 18 from 1002 .
+2017-04-09 12:09:49 : Peer 1001 received the 'event_have' message for the piece 23 from 1002 .
+2017-04-09 12:09:49 : Peer 1001 received the 'event_have' message for the piece 3 from 1002 .
+2017-04-09 12:09:49 : Peer 1001 received the 'event_have' message for the piece 9 from 1002 .
+2017-04-09 12:09:49 : Peer 1001 received the 'event_have' message for the piece 5 from 1002 .
+2017-04-09 12:09:49 : Peer 1001 received the 'event_have' message for the piece 0 from 1002 .
+2017-04-09 12:09:49 : Peer 1001 received the 'event_have' message for the piece 12 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 13 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 25 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 17 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 11 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 15 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 1 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 20 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 2 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 7 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 26 from 1002 .
+2017-04-09 12:09:50 : Peer 1001 received the 'event_have' message for the piece 4 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'event_have' message for the piece 19 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'event_have' message for the piece 24 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'event_have' message for the piece 21 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'event_have' message for the piece 22 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'event_have' message for the piece 8 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'event_have' message for the piece 10 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'event_have' message for the piece 14 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'event_have' message for the piece 16 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'event_have' message for the piece 27 from 1002 .
+2017-04-09 12:09:51 : Peer 1001 received the 'not event_Interested' message from 1002.
 2017-04-09 12:22:16 java.io.EOFException
 	at java.io.DataInputStream.readInt(DataInputStream.java:392)
 	at edu.ufl.cise.cnt5106c.IncomingHandshakeBehaviour.readObject(IncomingHandshakeBehaviour.java:36)

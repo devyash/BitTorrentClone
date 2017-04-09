@@ -57,36 +57,36 @@ public class MessageHandler {
             case CHOKE:
             {
                 isChokedByRemoteNeighbor = true;
-                eventLogger.choke(remote_Id);
+                eventLogger.event_Choke(remote_Id);
                 return null;
             }
             case UNCHOKE:
             {
                 isChokedByRemoteNeighbor = false;
-                eventLogger.unchoke(remote_Id);
+                eventLogger.event_Unchoke(remote_Id);
                 return requestPiece();
             }
             case INTERESTED:
             {
-                eventLogger.interested(remote_Id);
+                eventLogger.event_Interested(remote_Id);
                 AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null)
-                    peer.interested.set(true);
+                    peer.event_Interested.set(true);
                 return null;
             }
             case NOTINTERESTED:
             {
-                eventLogger.notInterested(remote_Id);
+                eventLogger.event_Not_Interested(remote_Id);
                 AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null)
-                    peer.interested.set(false);
+                    peer.event_Interested.set(false);
                 return null;
             }
             case HAVE:
             {
-                ActualMessage have =  message;
-                final int pieceId = have.getPieceIndex();
-                eventLogger.have(remote_Id, pieceId);
+                ActualMessage event_have =  message;
+                final int pieceId = event_have.getPieceIndex();
+                eventLogger.event_have(remote_Id, pieceId);
                 AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null) {
                     peer.received_Parts.set(pieceId);
@@ -126,7 +126,7 @@ public class MessageHandler {
                 if (peer != null) {
                     peer.bytes_Downloaded_From.addAndGet(piece.getContent().length);
                 }
-                eventLogger.pieceDownloadedMessage(remote_Id, piece.getPieceIndex(), file_Manager.getNumberOfReceivedParts());
+                eventLogger.event_Piece_Downloaded_Message(remote_Id, piece.getPieceIndex(), file_Manager.getNumberOfReceivedParts());
                 return requestPiece();
             }
         }

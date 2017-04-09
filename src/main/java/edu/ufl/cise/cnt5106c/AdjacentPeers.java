@@ -16,10 +16,10 @@ public class AdjacentPeers {
     public final boolean has_File_flag;
     public AtomicInteger bytes_Downloaded_From = new AtomicInteger (0);;
     public BitSet received_Parts;
-    public AtomicBoolean interested  = new AtomicBoolean (false);
+    public AtomicBoolean event_Interested  = new AtomicBoolean (false);
 
     /*
-	The djacent peers have their own peer id, peer address and port where they are located.
+	The djacent peers event_have their own peer id, peer address and port where they are located.
 	Hasfile defines if the adjacent peer has the file needed by the peer
     */
 	public AdjacentPeers(int pId, String pAddress, int pPort, boolean hasFile) {

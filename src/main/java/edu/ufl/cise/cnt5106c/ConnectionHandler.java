@@ -142,7 +142,7 @@ public class ConnectionHandler implements Runnable {
     throw new Exception("Remote peer id " + remote_Id + " is different from the expected id: " + expected_Neighbor_Id);
    }
    // Handshake successful
-   eventLogger.ConnectWithPeer(remote_Id, is_Conn_Neighbor_Flag);
+   eventLogger.event_Connect(remote_Id, is_Conn_Neighbor_Flag);
 
    sendInternal(msgHandler.process(received_Handshake));
    while (true) {
