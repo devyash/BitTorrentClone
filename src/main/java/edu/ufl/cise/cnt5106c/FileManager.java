@@ -1,8 +1,5 @@
 package edu.ufl.cise.cnt5106c;
 
-import edu.ufl.cise.cnt5106c.conf.CommonProperties;
-
-
 import java.util.BitSet;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -16,10 +13,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Giacomo Benincasa    (giacomo@cise.ufl.edu)
- */
 public class FileManager {
 
     private BitSet _receivedParts;
@@ -34,20 +27,6 @@ public class FileManager {
     public final File  _partsDir;
     private static final String partsLocation = "files/parts/";
 
-    FileManager (int peerId, Properties conf) {
-        this (peerId, conf.getProperty (CommonProperties.FileName.toString()),
-                Integer.parseInt(conf.getProperty(CommonProperties.FileSize.toString())),
-                Integer.parseInt(conf.getProperty(CommonProperties.PieceSize.toString())),
-                Integer.parseInt(conf.getProperty(CommonProperties.UnchokingInterval.toString())) * 1000);
-    }
-
-    /**
-     *
-     * @param peerId the id of this peer
-     * @param fileName the file being downloaded
-     * @param fileSize the size of the file being downloaded
-     * @param partSize the maximum size of a part
-     */
     FileManager (int peerId, String fileName, int fileSize, int partSize, long unchokingInterval) {
         _dPartSize = partSize;
         _bitsetSize = (int) Math.ceil (fileSize/_dPartSize);
@@ -62,11 +41,6 @@ public class FileManager {
         //_destination = new Destination(peerId, fileName);
     }
 
-    /**
-     *
-     * @param partIdx
-     * @param part
-     */
     public synchronized void addPart (int partIdx, byte[] part) {
 
         // TODO: write part on file, at the specified directroy
@@ -105,13 +79,7 @@ public class FileManager {
             }
         }
     }
-
-    /**
-     * @param availableParts parts that are available at the remote peer
-     * @return the ID of the part to request, if any, or a negative number in
-     * case all the missing parts are already being requested or the file is
-     * complete.
-     */
+    
     public synchronized int getPartToRequest(BitSet availableParts) {
         availableParts.andNot(getReceivedParts());
         return _partsBeingReq.getRequestedPiece (availableParts);
