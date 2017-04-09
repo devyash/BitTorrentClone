@@ -15,7 +15,7 @@ import java.util.List;
 
 public class FileManager {
 
-    private BitSet _receivedParts;
+    private BitSet received_Parts;
     private final Collection < Listener > _listeners = new LinkedList < > ();
     //private Destination _destination;
     private final double _dPartSize;
@@ -31,7 +31,7 @@ public class FileManager {
         _dPartSize = partSize;
         _bitsetSize = (int) Math.ceil(fileSize / _dPartSize);
         LogHelper.getLogger().debug("File size set to " + fileSize + "\tPart size set to " + _dPartSize + "\tBitset size set to " + _bitsetSize);
-        _receivedParts = new BitSet(_bitsetSize);
+        received_Parts = new BitSet(_bitsetSize);
         _partsBeingReq = new RequestPieceFromNeighbors(_bitsetSize, unchokingInterval);
 
         //new changes
@@ -44,8 +44,8 @@ public class FileManager {
     public synchronized void addPart(int partIdx, byte[] part) {
 
         // TODO: write part on file, at the specified directroy
-        final boolean isNewPiece = !_receivedParts.get(partIdx);
-        _receivedParts.set(partIdx);
+        final boolean isNewPiece = !received_Parts.get(partIdx);
+        received_Parts.set(partIdx);
 
         if (isNewPiece) {
 
@@ -71,8 +71,8 @@ public class FileManager {
         if (isFileCompleted()) {
 
             //new changes
-            mergeFile(_receivedParts.cardinality());
-            //_destination.mergeFile(_receivedParts.cardinality());
+            mergeFile(received_Parts.cardinality());
+            //_destination.mergeFile(received_Parts.cardinality());
             for (Listener listener: _listeners) {
                 listener.fileCompleted();
             }
@@ -85,11 +85,11 @@ public class FileManager {
     }
 
     public synchronized BitSet getReceivedParts() {
-        return (BitSet) _receivedParts.clone();
+        return (BitSet) received_Parts.clone();
     }
 
     synchronized public boolean hasPart(int pieceIndex) {
-        return _receivedParts.get(pieceIndex);
+        return received_Parts.get(pieceIndex);
     }
 
     /**
@@ -97,13 +97,13 @@ public class FileManager {
      */
     public synchronized void setAllParts() {
         for (int i = 0; i < _bitsetSize; i++) {
-            _receivedParts.set(i, true);
+            received_Parts.set(i, true);
         }
-        LogHelper.getLogger().debug("Received parts set to: " + _receivedParts.toString());
+        LogHelper.getLogger().debug("Received parts set to: " + received_Parts.toString());
     }
 
     public synchronized int getNumberOfReceivedParts() {
-        return _receivedParts.cardinality();
+        return received_Parts.cardinality();
     }
 
     public byte[] getPiece(int partId) {
@@ -138,7 +138,7 @@ public class FileManager {
 
     private boolean isFileCompleted() {
         for (int i = 0; i < _bitsetSize; i++) {
-            if (!_receivedParts.get(i)) {
+            if (!received_Parts.get(i)) {
                 return false;
             }
         }

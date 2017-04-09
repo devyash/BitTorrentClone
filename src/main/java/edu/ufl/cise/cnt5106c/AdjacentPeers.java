@@ -1,55 +1,60 @@
 package edu.ufl.cise.cnt5106c;
 
-import java.util.BitSet;
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.*;
+import java.util.concurrent.atomic.*;
 
-/**
- * Created by Jiya on 4/8/17.
- */
+/*
+the following class recognizes adjacent peers and checks if the adjacent peers has the files needed.
+Interested message is sent by the peer to another peer if the other peer has the file needed by that peer.
+*/
+
 public class AdjacentPeers {
-    public final int _peerId;
-    public final String _peerAddress;
-    public final int _peerPort;
+    public final int id;
+    public final String address;
+    public final int port;
 
-    //check its usage and see if we can chuck it
-    public final boolean _hasFile;
-    public AtomicInteger _bytesDownloadedFrom = new AtomicInteger (0);;
-    public BitSet _receivedParts;
-    public AtomicBoolean _interested  = new AtomicBoolean (false);
+    public final boolean has_File_flag;
+    public AtomicInteger bytes_Downloaded_From = new AtomicInteger (0);;
+    public BitSet received_Parts;
+    public AtomicBoolean interested  = new AtomicBoolean (false);
 
-    public AdjacentPeers(int pId, String pAddress, int pPort, boolean hasFile) {
-        _peerId = pId;
-        _peerAddress = pAddress;
-        _peerPort = pPort;
-        _hasFile = hasFile;
-        _receivedParts = new BitSet();
+    /*
+	The djacent peers have their own peer id, peer address and port where they are located.
+	Hasfile defines if the adjacent peer has the file needed by the peer
+    */
+	public AdjacentPeers(int pId, String pAddress, int pPort, boolean hasFile) {
+        this.id = pId;
+        this.address = pAddress;
+        this.port = pPort;
+        this.has_File_flag = hasFile;
+        this.received_Parts = new BitSet();
     }
 
-    @Override
     public boolean equals (Object obj) {
         if (obj == null) {
             return false;
         }
         if (obj instanceof AdjacentPeers) {
-            return (((AdjacentPeers) obj)._peerId == _peerId);
+            return (((AdjacentPeers) obj).id == id);
         }
         return false;
     }
-
-    @Override
+/*
+This function needs to be overwritten as the equals function has been overwritten.
+*/
     public int hashCode() {
         int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this._peerId);
+        hash = 97 * hash + Objects.hashCode(this.id);
         return hash;
     }
-
-    @Override
+/*
+This function overrides the String class's to String method.
+Used to print the details of the Adjacent Peer Class
+ */
     public String toString() {
-        return new StringBuilder (_peerId)
-                .append (" address:").append (_peerAddress)
-                .append(" port: ").append(_peerPort).toString();
+        return new StringBuilder (id)
+                .append (" The address:").append (address)
+                .append(" The port number: ").append(port).toString();
     }
 
 }

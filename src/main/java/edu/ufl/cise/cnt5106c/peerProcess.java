@@ -109,10 +109,10 @@ public class peerProcess {
             peerInfo.readCommonCfgFile();
             peerInfo.readPeerInfoCfgFile();
             for (AdjacentPeers peer: peerInfo.neighbors) {
-                if (peerId == peer._peerId) {
-                    address = peer._peerAddress;
-                    port = peer._peerPort;
-                    hasFile = peer._hasFile;
+                if (peerId == peer.id) {
+                    address = peer.address;
+                    port = peer.port;
+                    hasFile = peer.has_File_flag;
                     break;
                 } else {
                     peersToConnectTo.add(peer);
