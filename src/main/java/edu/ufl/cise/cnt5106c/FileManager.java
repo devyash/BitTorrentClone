@@ -16,7 +16,7 @@ import java.util.List;
 public class FileManager {
 
     private BitSet _receivedParts;
-    private final Collection<FileManagerListener> _listeners = new LinkedList<>();
+    private final Collection<Listener> _listeners = new LinkedList<>();
     //private Destination _destination;
     private final double _dPartSize;
     private final int _bitsetSize;
@@ -65,7 +65,7 @@ public class FileManager {
                 LogHelper.getLogger().warning(e);
             }
 
-            for (FileManagerListener listener : _listeners) {
+            for (Listener listener : _listeners) {
                 listener.pieceArrived (partIdx);
             }
         }
@@ -74,12 +74,18 @@ public class FileManager {
             //new changes
             mergeFile(_receivedParts.cardinality());
             //_destination.mergeFile(_receivedParts.cardinality());
-            for (FileManagerListener listener : _listeners) {
+            for (Listener listener : _listeners) {
                 listener.fileCompleted();
             }
         }
     }
-    
+
+    /**
+     * @param availableParts parts that are available at the remote peer
+     * @return the ID of the part to request, if any, or a negative number in
+     * case all the missing parts are already being requested or the file is
+     * complete.
+     */
     public synchronized int getPartToRequest(BitSet availableParts) {
         availableParts.andNot(getReceivedParts());
         return _partsBeingReq.getRequestedPiece (availableParts);
@@ -116,7 +122,7 @@ public class FileManager {
         return piece;
     }
 
-    public void registerListener (FileManagerListener listener) {
+    public void registerListener (Listener listener) {
         _listeners.add (listener);
     }
 
