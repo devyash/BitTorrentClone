@@ -16,7 +16,7 @@ import java.util.List;
 public class FileManager {
 
     private BitSet _receivedParts;
-    private final Collection<Listener> _listeners = new LinkedList<>();
+    private final Collection < Listener > _listeners = new LinkedList < > ();
     //private Destination _destination;
     private final double _dPartSize;
     private final int _bitsetSize;
@@ -24,15 +24,15 @@ public class FileManager {
 
     //new changes
     private final File _file;
-    public final File  _partsDir;
+    public final File _partsDir;
     private static final String partsLocation = "files/parts/";
 
-    FileManager (int peerId, String fileName, int fileSize, int partSize, long unchokingInterval) {
+    FileManager(int peerId, String fileName, int fileSize, int partSize, long unchokingInterval) {
         _dPartSize = partSize;
-        _bitsetSize = (int) Math.ceil (fileSize/_dPartSize);
-        LogHelper.getLogger().debug ("File size set to " + fileSize +  "\tPart size set to " + _dPartSize + "\tBitset size set to " + _bitsetSize);
-        _receivedParts = new BitSet (_bitsetSize);
-        _partsBeingReq = new RequestPieceFromNeighbors (_bitsetSize, unchokingInterval);
+        _bitsetSize = (int) Math.ceil(fileSize / _dPartSize);
+        LogHelper.getLogger().debug("File size set to " + fileSize + "\tPart size set to " + _dPartSize + "\tBitset size set to " + _bitsetSize);
+        _receivedParts = new BitSet(_bitsetSize);
+        _partsBeingReq = new RequestPieceFromNeighbors(_bitsetSize, unchokingInterval);
 
         //new changes
         _partsDir = new File("./peer_" + peerId + "/" + partsLocation + fileName);
@@ -41,11 +41,11 @@ public class FileManager {
         //_destination = new Destination(peerId, fileName);
     }
 
-    public synchronized void addPart (int partIdx, byte[] part) {
+    public synchronized void addPart(int partIdx, byte[] part) {
 
         // TODO: write part on file, at the specified directroy
         final boolean isNewPiece = !_receivedParts.get(partIdx);
-        _receivedParts.set (partIdx);
+        _receivedParts.set(partIdx);
 
         if (isNewPiece) {
 
@@ -60,13 +60,12 @@ public class FileManager {
                 fos.write(part);
                 fos.flush();
                 fos.close();
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 LogHelper.getLogger().warning(e);
             }
 
-            for (Listener listener : _listeners) {
-                listener.pieceArrived (partIdx);
+            for (Listener listener: _listeners) {
+                listener.pieceArrived(partIdx);
             }
         }
         if (isFileCompleted()) {
@@ -74,24 +73,18 @@ public class FileManager {
             //new changes
             mergeFile(_receivedParts.cardinality());
             //_destination.mergeFile(_receivedParts.cardinality());
-            for (Listener listener : _listeners) {
+            for (Listener listener: _listeners) {
                 listener.fileCompleted();
             }
         }
     }
 
-    /**
-     * @param availableParts parts that are available at the remote peer
-     * @return the ID of the part to request, if any, or a negative number in
-     * case all the missing parts are already being requested or the file is
-     * complete.
-     */
     public synchronized int getPartToRequest(BitSet availableParts) {
         availableParts.andNot(getReceivedParts());
-        return _partsBeingReq.getRequestedPiece (availableParts);
+        return _partsBeingReq.getRequestedPiece(availableParts);
     }
 
-    public synchronized BitSet getReceivedParts () {
+    public synchronized BitSet getReceivedParts() {
         return (BitSet) _receivedParts.clone();
     }
 
@@ -102,8 +95,7 @@ public class FileManager {
     /**
      * Set all parts as received.
      */
-    public synchronized void setAllParts()
-    {
+    public synchronized void setAllParts() {
         for (int i = 0; i < _bitsetSize; i++) {
             _receivedParts.set(i, true);
         }
@@ -114,7 +106,7 @@ public class FileManager {
         return _receivedParts.cardinality();
     }
 
-    public byte[] getPiece (int partId) {
+    public byte[] getPiece(int partId) {
 
         //new changes
         byte[] piece = getPartAsByteArray(partId);
@@ -122,18 +114,18 @@ public class FileManager {
         return piece;
     }
 
-    public void registerListener (Listener listener) {
-        _listeners.add (listener);
+    public void registerListener(Listener listener) {
+        _listeners.add(listener);
     }
 
-    public void splitFile(){
+    public void splitFile() {
 
         //new changes
         splitFile((int) _dPartSize);
         //_destination.splitFile((int) _dPartSize);
     }
 
-    public byte[][] getAllPieces(){
+    public byte[][] getAllPieces() {
 
         //new changes
         return getAllPartsAsByteArrays();
@@ -153,10 +145,10 @@ public class FileManager {
         return true;
     }
 
-    public byte[][] getAllPartsAsByteArrays(){
-        File[] listOfFiles = _partsDir.listFiles ();
+    public byte[][] getAllPartsAsByteArrays() {
+        File[] listOfFiles = _partsDir.listFiles();
         byte[][] byteArray = new byte[listOfFiles.length][getPartAsByteArray(1).length];
-        for (File file : listOfFiles) {
+        for (File file: listOfFiles) {
             int len = (int) file.length();
             byte[] bFile = new byte[len];
             FileInputStream fis = null;
@@ -164,19 +156,16 @@ public class FileManager {
                 fis = new FileInputStream(file);
                 int currBytes = fis.read(bFile, 0, len);
                 fis.close();
-                if(currBytes == bFile.length && currBytes == len )
+                if (currBytes == bFile.length && currBytes == len)
                     byteArray[Integer.parseInt(file.getName())] = bFile;
                 break;
-            }
-            catch(Exception e) {
+            } catch (Exception e) {
                 LogHelper.getLogger().warning(e);
-            }
-            finally {
+            } finally {
                 if (fis != null) {
                     try {
                         fis.close();
-                    }
-                    catch(IOException ex) {}
+                    } catch (IOException ex) {}
                 }
             }
             byteArray[Integer.parseInt(file.getName())] = null;
@@ -193,24 +182,21 @@ public class FileManager {
             fis = new FileInputStream(file);
             int currBytes = fis.read(bFile, 0, len);
             fis.close();
-            if(currBytes == bFile.length && currBytes == len )
+            if (currBytes == bFile.length && currBytes == len)
                 return bFile;
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             LogHelper.getLogger().warning(e);
-        }
-        finally {
+        } finally {
             if (fis != null) {
                 try {
                     fis.close();
-                }
-                catch(IOException ex) {}
+                } catch (IOException ex) {}
             }
         }
         return null;
     }
 
-    public void splitFile(int partSize){
+    public void splitFile(int partSize) {
         FileInputStream inputStream;
         String newFileName;
         FileOutputStream filePart;
@@ -226,7 +212,7 @@ public class FileManager {
                 byteChunkPart = new byte[readLength];
                 read = inputStream.read(byteChunkPart, 0, readLength);
                 fileSize -= read;
-                assert (read == byteChunkPart.length);
+                assert(read == byteChunkPart.length);
                 nChunks++;
                 newFileName = _file.getParent() + "/parts/" +
                         _file.getName() + "/" + Integer.toString(nChunks - 1);
@@ -249,18 +235,18 @@ public class FileManager {
         FileInputStream fis;
         byte[] fileBytes;
         int bytesRead = 0;
-        List<File> list = new ArrayList<>();
+        List < File > list = new ArrayList < > ();
         for (int i = 0; i < numParts; i++) {
             list.add(new File(_partsDir.getPath() + "/" + i));
         }
         try {
             fos = new FileOutputStream(ofile);
-            for (File file : list) {
+            for (File file: list) {
                 fis = new FileInputStream(file);
                 fileBytes = new byte[(int) file.length()];
                 bytesRead = fis.read(fileBytes, 0, (int) file.length());
-                assert (bytesRead == fileBytes.length);
-                assert (bytesRead == (int) file.length());
+                assert(bytesRead == fileBytes.length);
+                assert(bytesRead == (int) file.length());
                 fos.write(fileBytes);
                 fos.flush();
                 fileBytes = null;
