@@ -21,7 +21,7 @@ public class Process implements Runnable, FileManagerListener, PeerManagerListen
     private final int _peerId;
     private final int _port;
     private final boolean _hasFile;
-    private final ReadConfig _conf;
+    private final peerProcess _conf;
     private final FileManager _fileMgr;
     private final PeerManager _peerMgr;
     private final EventLogger _eventLogger;
@@ -31,12 +31,13 @@ public class Process implements Runnable, FileManagerListener, PeerManagerListen
     private final Collection<ConnectionHandler> _connHandlers =
             Collections.newSetFromMap(new ConcurrentHashMap<ConnectionHandler, Boolean>());
 
-    public Process(int peerId, String address, int port, boolean hasFile, Collection<AdjacentPeers> peerInfo, ReadConfig conf) {
+    public Process(int peerId, String address, int port, boolean hasFile, Collection<AdjacentPeers> peerInfo, peerProcess conf) {
         _peerId = peerId;
         _port = port;
         _hasFile = hasFile;
         _conf = conf;    
         //fixed after merging CommonProperties ReadProperties
+        //System.out.println("\nFileManager obj "+_conf.FileName +", "+ _conf.FileSize +", "+ _conf.PieceSize +", "+ _conf.UnchokingInterval);
         _fileMgr = new FileManager(_peerId, _conf.FileName, _conf.FileSize, _conf.PieceSize, _conf.UnchokingInterval * 1000);
         ArrayList<AdjacentPeers> remotePeers = new ArrayList<>(peerInfo);
         for (AdjacentPeers ri : remotePeers) {
