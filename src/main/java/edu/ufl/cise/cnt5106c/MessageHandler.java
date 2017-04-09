@@ -51,7 +51,7 @@ public class MessageHandler {
     }
 
     public ActualMessage process(ActualMessage message) {
-        switch (message.msgType) {
+        switch (message.message_Type) {
             case CHOKE: {
                 isChokedByRemoteNeighbor = true;
                 eventLogger.choke(remoteNeighborID);
@@ -81,7 +81,7 @@ public class MessageHandler {
             }
             case BITFIELD: {
                 Payload bitfield = (Payload) message;
-                BitSet bitset =  BitSet.valueOf(bitfield.msgPayload);
+                BitSet bitset =  BitSet.valueOf(bitfield.message_Payload);
                 neighborMgr.bitfieldArrived(remoteNeighborID, bitset);
                 bitset.andNot(fileMgr.getReceivedParts());
                 return bitset.isEmpty() == true ? new OnlyType(NOTINTERESTED) : new OnlyType(INTERESTED);

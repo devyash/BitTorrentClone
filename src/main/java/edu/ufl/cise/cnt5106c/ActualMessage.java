@@ -1,76 +1,72 @@
-package edu.ufl.cise.cnt5106c; /**
- * Created by Jiya on 2/16/17.
- */
+package edu.ufl.cise.cnt5106c;
 
-//import org.jetbrains.annotations.NotNull;
+import java.io.*;
+import java.nio.*;
+import java.util.*;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.Arrays;
+/*
+* This is the Actual Message class that has 3 class variables
+* @param message length @param message type @param message payload
+* This Class handles byte array to (int)piece conversion of size 4 and back
+*
+* */
 
 public class ActualMessage{
-    public int msgLength;
-    public int msgType;
-    public byte[] msgPayload;
-
-    ActualMessage(){
-        msgLength = 0;
-        msgType = -1;
-        msgPayload = null;
-    }
+    public int message_Length;
+    public int message_Type;
+    public byte[] message_Payload;
 
     ActualMessage(int type, byte[] payload){
-        msgLength = (payload == null ? 0 : payload.length)
-                + 1; // for the _type
-        //if(payload.length > 0){
-            msgPayload = payload;
-          //  msgLength = payload.length;
-        //}
-        msgType = type;
+        /*Constructor that set the message length according to payload size */
+        message_Length = (payload == null ? 0 : payload.length) + 1;
+        message_Payload = payload;
+        message_Type = type;
     }
 
     public void read (DataInputStream in) throws IOException {
-        if ((msgPayload != null) && (msgPayload.length) > 0) {
-            in.readFully(msgPayload, 0, msgPayload.length);
+        /*Takes an DataInputStream Interface variable and
+         * reads the byte array(payload) till the message length
+         */
+        if ((message_Payload != null) && (message_Payload.length) > 0) {
+            in.readFully(message_Payload, 0, message_Payload.length);
         }
     }
 
     public void write (DataOutputStream out) throws IOException {
-        out.writeInt(msgLength);
-        out.writeInt(msgType);
-        if ((msgPayload != null) && (msgPayload.length > 0)) {
-            out.write(msgPayload, 0, msgPayload.length);
+         /*Takes an DataOutputStream Interface variable
+         and writes the byte array(payload) till the message length
+         */
+        out.writeInt(message_Length);
+        out.writeInt(message_Type);
+        if ((message_Payload != null) && (message_Payload.length > 0)) {
+            out.write(message_Payload, 0, message_Payload.length);
         }
     }
 
     public int getPieceIndex(){
-        return ByteBuffer.wrap(Arrays.copyOfRange(msgPayload, 0, 4)).getInt();
+         /* Reads 4 bytes of the message Payload and converts it into and int and returns   */
+        return ByteBuffer.wrap(Arrays.copyOfRange(message_Payload, 0, 4)).getInt();
     }
 
     public byte[] getContent() {
-        int len = msgPayload.length;
-        return ((msgPayload == null) || (len <= 4)) ? null : Arrays.copyOfRange(msgPayload, 4, len);
+        /*Check if the content of messagepayload is less than 4, returns the next of*/
+        int len = message_Payload.length;
+        return ((message_Payload == null) || (len <= 4)) ? null : Arrays.copyOfRange(message_Payload, 4, len);
     }
 
     public static byte[] merge (int index, byte[] temp) {
-        byte[] piece = null;
+        /*
+        * Merges the piece with index passed and the byte array*/
+        byte[] piece;
         if(temp == null)
             piece = new byte[4];
         else
             piece = new byte[4 + temp.length];
-
+        //converts the piece index into a byte array
         System.arraycopy(ByteBuffer.allocate(4).putInt(index).array(), 0, piece, 0, 4);
-
-        System.arraycopy(temp, 0, piece, 4, temp.length);
-
-        return piece;
+        System.arraycopy(temp, 0, piece, 4, temp.length); return piece;
     }
-//
-//    @NotNull
-    public static byte[] getIndexBytes (int pieceIndex) {
-        return ByteBuffer.allocate(4).putInt(pieceIndex).array();
-    }
+
+
 
 }
