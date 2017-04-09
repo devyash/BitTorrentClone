@@ -1,4 +1,3 @@
-/home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/Payload.java
 /home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/FileManager.java
 /home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/OutgoingMessage.java
 /home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/Listener.java
@@ -9,7 +8,6 @@
 /home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.java
 /home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/RequestPieceFromNeighbors.java
 /home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java
-/home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/OnlyType.java
 /home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/AdjacentPeers.java
 /home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/EventLogger.java
 /home/devyash/Desktop/BitTorrentClone/src/main/java/edu/ufl/cise/cnt5106c/MessageHandler.java

@@ -19,7 +19,7 @@ public class Process implements Runnable, Listener {
     private final int _port;
     private final boolean _hasFile;
     private final peerProcess _conf;
-    private final FileManager _fileMgr;
+    private final FileManager file_Manager;
     private final PeerManager _peerMgr;
     private final EventLogger _eventLogger;
     private final AtomicBoolean _fileCompleted = new AtomicBoolean(false);
@@ -35,7 +35,7 @@ public class Process implements Runnable, Listener {
         _conf = conf;
         //fixed after merging CommonProperties ReadProperties
         //System.out.println("\nFileManager obj "+_conf.FileName +", "+ _conf.FileSize +", "+ _conf.PieceSize +", "+ _conf.UnchokingInterval);
-        _fileMgr = new FileManager(_peerId, _conf.FileName, _conf.FileSize, _conf.PieceSize, _conf.UnchokingInterval * 1000);
+        file_Manager = new FileManager(_peerId, _conf.FileName, _conf.FileSize, _conf.PieceSize, _conf.UnchokingInterval * 1000);
         ArrayList < AdjacentPeers > remotePeers = new ArrayList < > (peerInfo);
         for (AdjacentPeers ri: remotePeers) {
             if (ri._peerId == peerId) {
@@ -44,19 +44,19 @@ public class Process implements Runnable, Listener {
                 break;
             }
         }
-        _peerMgr = new PeerManager(_peerId, remotePeers, _fileMgr.getBitmapSize(), _conf);
+        _peerMgr = new PeerManager(_peerId, remotePeers, file_Manager.getBitmapSize(), _conf);
         _eventLogger = new EventLogger(peerId, LogHelper.getLogger());
         _fileCompleted.set(_hasFile);
     }
 
     void init() {
-        _fileMgr.registerListener(this);
+        file_Manager.registerListener(this);
         _peerMgr.registerListener(this);
 
         if (_hasFile) {
             LogHelper.getLogger().debug("Spltting file");
-            _fileMgr.splitFile();
-            _fileMgr.setAllParts();
+            file_Manager.splitFile();
+            file_Manager.setAllParts();
         } else {
             LogHelper.getLogger().debug("Peer does not have file");
         }
@@ -74,7 +74,7 @@ public class Process implements Runnable, Listener {
             while (!_terminate.get()) {
                 try {
                     LogHelper.getLogger().debug(Thread.currentThread().getName() + ": Peer " + _peerId + " listening on port " + _port + ".");
-                    addConnHandler(new ConnectionHandler(_peerId, false, -1, serverSocket.accept(), _fileMgr, _peerMgr));
+                    addConnHandler(new ConnectionHandler(_peerId, false, -1, serverSocket.accept(), file_Manager, _peerMgr));
 
                 } catch (Exception e) {
                     LogHelper.getLogger().warning(e);
@@ -97,7 +97,7 @@ public class Process implements Runnable, Listener {
                     LogHelper.getLogger().debug(" Connecting to peer: " + peer._peerId + " (" + peer._peerAddress + ":" + peer._peerPort + ")");
                     socket = new Socket(peer._peerAddress, peer._peerPort);
                     if (addConnHandler(new ConnectionHandler(_peerId, true, peer._peerId,
-                            socket, _fileMgr, _peerMgr))) {
+                            socket, file_Manager, _peerMgr))) {
                         iter.remove();
                         LogHelper.getLogger().debug(" Connected to peer: " + peer._peerId + " (" + peer._peerAddress + ":" + peer._peerPort + ")");
 
@@ -159,7 +159,7 @@ public class Process implements Runnable, Listener {
             AdjacentPeers peer = _peerMgr.searchPeer(connHanlder.getRemoteNeighborId());
             if (peer != null) {
                 BitSet pBitset = (BitSet) peer._receivedParts.clone();
-                pBitset.andNot(_fileMgr.getReceivedParts());
+                pBitset.andNot(file_Manager.getReceivedParts());
                 flag = !pBitset.isEmpty();
             }
             if (!flag) {
