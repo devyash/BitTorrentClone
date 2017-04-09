@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 
-public class Process implements Runnable, FileManagerListener, PeerManagerListener {
+public class Process implements Runnable, Listener {
     private final static int CHOKE = 0;
     private final static int UNCHOKE = 1;
     private final static int NOTINTERESTED = 3;
