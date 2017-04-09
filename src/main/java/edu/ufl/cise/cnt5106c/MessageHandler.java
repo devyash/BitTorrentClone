@@ -5,10 +5,7 @@ package edu.ufl.cise.cnt5106c;
 import java.nio.ByteBuffer;
 import java.util.BitSet;
 
-
-
 public class MessageHandler {
-
     final static int CHOKE = 0;
     final static int UNCHOKE = 1;
     final static int INTERESTED = 2;
@@ -36,10 +33,15 @@ public class MessageHandler {
         if (isChokedByRemoteNeighbor)
             LogHelper.getLogger().debug("No parts can be requested to " + remoteNeighborID);
         else {
-            int pieceIndex = fileMgr.getPartToRequest(neighborMgr.getReceivedParts(remoteNeighborID)) ;
+            BitSet b = new BitSet();
+            AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+            if (peer != null) {
+                b = (BitSet) peer._receivedParts.clone();
+            }
+            int pieceIndex = fileMgr.getPartToRequest(b);
             if (pieceIndex >= 0) {
                 LogHelper.getLogger().debug("Requesting part " + pieceIndex + " to " + remoteNeighborID);
-                return new Payload(REQUEST,ByteBuffer.allocate(4).putInt(pieceIndex).array());
+                return new ActualMessage(REQUEST, ByteBuffer.allocate(4).putInt(pieceIndex).array());
             }
         }
         return null;
@@ -47,60 +49,83 @@ public class MessageHandler {
 
     public ActualMessage process(HandShakeMessage handshake) {
         BitSet bitset = fileMgr.getReceivedParts();
-        return !bitset.isEmpty() ? new Payload(BITFIELD,bitset.toByteArray()) : null;
+        return !bitset.isEmpty() ? new ActualMessage(BITFIELD, bitset.toByteArray()) : null;
     }
 
     public ActualMessage process(ActualMessage message) {
-        switch (message.message_Type) {
-            case CHOKE: {
+        switch (message.msgType) {
+            case CHOKE:
+            {
                 isChokedByRemoteNeighbor = true;
                 eventLogger.choke(remoteNeighborID);
                 return null;
             }
-            case UNCHOKE: {
+            case UNCHOKE:
+            {
                 isChokedByRemoteNeighbor = false;
                 eventLogger.unchoke(remoteNeighborID);
                 return requestPiece();
             }
-            case INTERESTED: {
+            case INTERESTED:
+            {
                 eventLogger.interested(remoteNeighborID);
-                neighborMgr.addInterestPeer(remoteNeighborID);
+                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                if (peer != null)
+                    peer._interested.set(true);
                 return null;
             }
-            case NOTINTERESTED: {
+            case NOTINTERESTED:
+            {
                 eventLogger.notInterested(remoteNeighborID);
-                neighborMgr.removeInterestPeer(remoteNeighborID);
+                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                if (peer != null)
+                    peer._interested.set(false);
                 return null;
             }
-            case HAVE: {
-                Payload have = (Payload) message;
+            case HAVE:
+            {
+                ActualMessage have = (ActualMessage) message;
                 final int pieceId = have.getPieceIndex();
                 eventLogger.have(remoteNeighborID, pieceId);
-                neighborMgr.haveArrived(remoteNeighborID, pieceId);
-                return fileMgr.getReceivedParts().get(pieceId) == true ? new OnlyType(NOTINTERESTED) : new OnlyType(INTERESTED);
+                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                if (peer != null) {
+                    peer._receivedParts.set(pieceId);
+                }
+                neighborMgr.neighborsCompletedDownload();
+                return fileMgr.getReceivedParts().get(pieceId) == true ? new ActualMessage(NOTINTERESTED, null) : new ActualMessage(INTERESTED, null);
             }
-            case BITFIELD: {
-                Payload bitfield = (Payload) message;
-                BitSet bitset =  BitSet.valueOf(bitfield.message_Payload);
-                neighborMgr.bitfieldArrived(remoteNeighborID, bitset);
+            case BITFIELD:
+            {
+                ActualMessage bitfield = (ActualMessage) message;
+                BitSet bitset = BitSet.valueOf(bitfield.msgPayload);
+                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                if (peer != null) {
+                    peer._receivedParts = bitset;
+                }
+                neighborMgr.neighborsCompletedDownload();
                 bitset.andNot(fileMgr.getReceivedParts());
-                return bitset.isEmpty() == true ? new OnlyType(NOTINTERESTED) : new OnlyType(INTERESTED);
+                return bitset.isEmpty() == true ? new ActualMessage(NOTINTERESTED, null) : new ActualMessage(INTERESTED, null);
             }
-            case REQUEST: {
-                Payload request = (Payload)message;
+            case REQUEST:
+            {
+                ActualMessage request = (ActualMessage) message;
                 if (neighborMgr.canUploadToPeer(remoteNeighborID)) {
                     byte[] piece = fileMgr.getPiece(request.getPieceIndex());
                     if (piece != null) {
                         byte[] mergedPiece = request.merge(request.getPieceIndex(), piece);
-                        return new Payload(PIECE,mergedPiece);
+                        return new ActualMessage(PIECE, mergedPiece);
                     }
                 }
                 return null;
             }
-            case PIECE: {
-                Payload piece = (Payload) message;
+            case PIECE:
+            {
+                ActualMessage piece = (ActualMessage) message;
                 fileMgr.addPart(piece.getPieceIndex(), piece.getContent());
-                neighborMgr.receivedPart(remoteNeighborID, piece.getContent().length);
+                AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
+                if (peer != null) {
+                    peer._bytesDownloadedFrom.addAndGet(piece.getContent().length);
+                }
                 eventLogger.pieceDownloadedMessage(remoteNeighborID, piece.getPieceIndex(), fileMgr.getNumberOfReceivedParts());
                 return requestPiece();
             }
