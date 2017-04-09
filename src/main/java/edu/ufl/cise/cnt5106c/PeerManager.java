@@ -47,7 +47,7 @@ public class PeerManager implements Runnable {
                     LogHelper.getLogger().debug("STATE: OPT UNCHOKED(" + _numberOfOptimisticallyUnchokedNeighbors + "):" + LogHelper.getNeighborsAsString (_optmisticallyUnchokedPeers));
                     _eventLogger.updateOptimisticallyUnchokedNeighbor(LogHelper.getNeighborsAsString (_optmisticallyUnchokedPeers));
                 }
-                for (PeerManagerListener listener : _listeners) {
+                for (Listener listener : _listeners) {
                     Set<Integer> ids = new HashSet<>();
                     for (AdjacentPeers peer : _optmisticallyUnchokedPeers) {
                         ids.add(peer._peerId);
@@ -65,7 +65,7 @@ public class PeerManager implements Runnable {
     private final List<AdjacentPeers> _peers = new ArrayList<>();
     private final Collection<AdjacentPeers> _preferredPeers = new HashSet<>();
     private final OptimisticUnchoker _optUnchoker;
-    private final Collection<PeerManagerListener> _listeners = new LinkedList<>();
+    private final Collection<Listener> _listeners = new LinkedList<>();
     private final AtomicBoolean _randomlySelectPreferred = new AtomicBoolean(false);
 
     PeerManager(int peerId, Collection<AdjacentPeers> peers, int bitmapsize, peerProcess conf) {
@@ -174,12 +174,12 @@ public class PeerManager implements Runnable {
                 return;
             }
         }
-        for (PeerManagerListener listener : _listeners) {
+        for (Listener listener : _listeners) {
             listener.neighborsCompletedDownload();
         }
     }
 
-    public synchronized void registerListener(PeerManagerListener listener) {
+    public synchronized void registerListener(Listener listener) {
         _listeners.add(listener);
     }
 
@@ -272,7 +272,7 @@ public class PeerManager implements Runnable {
 
             // 5) NOTIFY PROCESS, IT WILL TAKE CARE OF SENDING CHOKE AND UNCHOKE MESSAGES
 
-            for (PeerManagerListener listener : _listeners) {
+            for (Listener listener : _listeners) {
                 listener.chockedPeers(chokedPeersIDs);
                 listener.unchockedPeers(preferredNeighborsIDs);
             }
