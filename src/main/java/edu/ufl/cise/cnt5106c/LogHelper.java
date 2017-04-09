@@ -1,8 +1,7 @@
-package edu.ufl.cise.cnt5106c; /**
+package edu.ufl.cise.cnt5106c;
+/**
  * Updated by Jiya on 4/3/17.
  */
-
-import edu.ufl.cise.cnt5106c.conf.RemotePeerInfo;
 
 import java.io.*;
 import java.util.Collection;
@@ -52,12 +51,12 @@ public class LogHelper {
         logHelper.myLogger.addHandler(handler);
     }
 
-    public static String getNeighborsAsString (Collection<RemotePeerInfo> neighbors) {
+    public static String getNeighborsAsString (Collection<AdjacentPeers> neighbors) {
         String s = "";
         boolean isFirst = true;
 
-        for (Iterator<RemotePeerInfo> iterator = neighbors.iterator(); iterator.hasNext();) {
-            int type = iterator.next().getPeerId();
+        for (Iterator<AdjacentPeers> iterator = neighbors.iterator(); iterator.hasNext();) {
+            int type = iterator.next()._peerId;
             s = isFirst != true ? ", " :"";
             if(isFirst == true)
                 isFirst = false;
