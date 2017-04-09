@@ -70,8 +70,6 @@ public class peerProcess {
             BufferedReader reader = new BufferedReader(new FileReader(peerInfoFileName));
             String in = reader.readLine();
             String[] split = in .split(" ");
-            if ( in == null)
-                System.out.print("\nYo\n");
             while ( in != null) {
                 split = in .split(" ");
                 int id = Integer.parseInt(split[0]);
@@ -82,11 +80,6 @@ public class peerProcess {
                 if (id != this.myid) {
                     nbr = new AdjacentPeers(id, hostname, port, hasFile);
                     neighbors.add(nbr);
-     /*// All neighbors start out as choked
-     this.neighborStatus.put(id, PeerStatus.Choked);
-     // and uninterested
-     this.neighborInterestedStatus.put(id,
-             PeerInterestedStatus.NotInterested);*/
                     if (id > this.myid)
                         num_wait++;
                 } else
