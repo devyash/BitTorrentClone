@@ -56,7 +56,7 @@ public class LogHelper {
         boolean isFirst = true;
 
         for (Iterator<AdjacentPeers> iterator = neighbors.iterator(); iterator.hasNext();) {
-            int type = iterator.next()._peerId;
+            int type = iterator.next().id;
             s = isFirst != true ? ", " :"";
             if(isFirst == true)
                 isFirst = false;

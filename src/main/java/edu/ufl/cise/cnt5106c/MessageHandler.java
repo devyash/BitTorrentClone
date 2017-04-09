@@ -36,7 +36,7 @@ public class MessageHandler {
             BitSet b = new BitSet();
             AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
             if (peer != null) {
-                b = (BitSet) peer._receivedParts.clone();
+                b = (BitSet) peer.received_Parts.clone();
             }
             int pieceIndex = file_Manager.getPartToRequest(b);
             if (pieceIndex >= 0) {
@@ -71,7 +71,7 @@ public class MessageHandler {
                 eventLogger.interested(remote_Id);
                 AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null)
-                    peer._interested.set(true);
+                    peer.interested.set(true);
                 return null;
             }
             case NOTINTERESTED:
@@ -79,7 +79,7 @@ public class MessageHandler {
                 eventLogger.notInterested(remote_Id);
                 AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null)
-                    peer._interested.set(false);
+                    peer.interested.set(false);
                 return null;
             }
             case HAVE:
@@ -89,7 +89,7 @@ public class MessageHandler {
                 eventLogger.have(remote_Id, pieceId);
                 AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null) {
-                    peer._receivedParts.set(pieceId);
+                    peer.received_Parts.set(pieceId);
                 }
                 neighbor_Manager.neighborsCompletedDownload();
                 return file_Manager.getReceivedParts().get(pieceId) == true ? new ActualMessage(NOTINTERESTED, null) : new ActualMessage(INTERESTED, null);
@@ -100,7 +100,7 @@ public class MessageHandler {
                 BitSet bitset = BitSet.valueOf(bitfield.payload);
                 AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null) {
-                    peer._receivedParts = bitset;
+                    peer.received_Parts = bitset;
                 }
                 neighbor_Manager.neighborsCompletedDownload();
                 bitset.andNot(file_Manager.getReceivedParts());
@@ -124,7 +124,7 @@ public class MessageHandler {
                 file_Manager.addPart(piece.getPieceIndex(), piece.getContent());
                 AdjacentPeers peer = neighbor_Manager.searchPeer(remote_Id);
                 if (peer != null) {
-                    peer._bytesDownloadedFrom.addAndGet(piece.getContent().length);
+                    peer.bytes_Downloaded_From.addAndGet(piece.getContent().length);
                 }
                 eventLogger.pieceDownloadedMessage(remote_Id, piece.getPieceIndex(), file_Manager.getNumberOfReceivedParts());
                 return requestPiece();

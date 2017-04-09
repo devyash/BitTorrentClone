@@ -15,9 +15,9 @@ public class Process implements Runnable, Listener {
     private final static int UNCHOKE = 1;
     private final static int NOTINTERESTED = 3;
     private final static int HAVE = 4;
-    private final int _peerId;
+    private final int id;
     private final int _port;
-    private final boolean _hasFile;
+    private final boolean has_File_flag;
     private final peerProcess _conf;
     private final FileManager file_Manager;
     private final PeerManager _peerMgr;
@@ -29,31 +29,31 @@ public class Process implements Runnable, Listener {
             Collections.newSetFromMap(new ConcurrentHashMap < ConnectionHandler, Boolean > ());
 
     public Process(int peerId, String address, int port, boolean hasFile, Collection < AdjacentPeers > peerInfo, peerProcess conf) {
-        _peerId = peerId;
+        id = peerId;
         _port = port;
-        _hasFile = hasFile;
+        has_File_flag = hasFile;
         _conf = conf;
         //fixed after merging CommonProperties ReadProperties
         //System.out.println("\nFileManager obj "+_conf.FileName +", "+ _conf.FileSize +", "+ _conf.PieceSize +", "+ _conf.UnchokingInterval);
-        file_Manager = new FileManager(_peerId, _conf.FileName, _conf.FileSize, _conf.PieceSize, _conf.UnchokingInterval * 1000);
+        file_Manager = new FileManager(id, _conf.FileName, _conf.FileSize, _conf.PieceSize, _conf.UnchokingInterval * 1000);
         ArrayList < AdjacentPeers > remotePeers = new ArrayList < > (peerInfo);
         for (AdjacentPeers ri: remotePeers) {
-            if (ri._peerId == peerId) {
+            if (ri.id == peerId) {
                 // rmeove myself
                 remotePeers.remove(ri);
                 break;
             }
         }
-        _peerMgr = new PeerManager(_peerId, remotePeers, file_Manager.getBitmapSize(), _conf);
+        _peerMgr = new PeerManager(id, remotePeers, file_Manager.getBitmapSize(), _conf);
         _eventLogger = new EventLogger(peerId, LogHelper.getLogger());
-        _fileCompleted.set(_hasFile);
+        _fileCompleted.set(has_File_flag);
     }
 
     void init() {
         file_Manager.registerListener(this);
         _peerMgr.registerListener(this);
 
-        if (_hasFile) {
+        if (has_File_flag) {
             LogHelper.getLogger().debug("Spltting file");
             file_Manager.splitFile();
             file_Manager.setAllParts();
@@ -73,8 +73,8 @@ public class Process implements Runnable, Listener {
             ServerSocket serverSocket = new ServerSocket(_port);
             while (!_terminate.get()) {
                 try {
-                    LogHelper.getLogger().debug(Thread.currentThread().getName() + ": Peer " + _peerId + " listening on port " + _port + ".");
-                    addConnHandler(new ConnectionHandler(_peerId, false, -1, serverSocket.accept(), file_Manager, _peerMgr));
+                    LogHelper.getLogger().debug(Thread.currentThread().getName() + ": Peer " + id + " listening on port " + _port + ".");
+                    addConnHandler(new ConnectionHandler(id, false, -1, serverSocket.accept(), file_Manager, _peerMgr));
 
                 } catch (Exception e) {
                     LogHelper.getLogger().warning(e);
@@ -94,16 +94,16 @@ public class Process implements Runnable, Listener {
                 Socket socket = null;
                 AdjacentPeers peer = iter.next();
                 try {
-                    LogHelper.getLogger().debug(" Connecting to peer: " + peer._peerId + " (" + peer._peerAddress + ":" + peer._peerPort + ")");
-                    socket = new Socket(peer._peerAddress, peer._peerPort);
-                    if (addConnHandler(new ConnectionHandler(_peerId, true, peer._peerId,
+                    LogHelper.getLogger().debug(" Connecting to peer: " + peer.id + " (" + peer.address + ":" + peer.port + ")");
+                    socket = new Socket(peer.address, peer.port);
+                    if (addConnHandler(new ConnectionHandler(id, true, peer.id,
                             socket, file_Manager, _peerMgr))) {
                         iter.remove();
-                        LogHelper.getLogger().debug(" Connected to peer: " + peer._peerId + " (" + peer._peerAddress + ":" + peer._peerPort + ")");
+                        LogHelper.getLogger().debug(" Connected to peer: " + peer.id + " (" + peer.address + ":" + peer.port + ")");
 
                     }
                 } catch (ConnectException ex) {
-                    LogHelper.getLogger().warning("could not connect to peer " + peer._peerId + " at address " + peer._peerAddress + ":" + peer._peerPort);
+                    LogHelper.getLogger().warning("could not connect to peer " + peer.id + " at address " + peer.address + ":" + peer.port);
                     if (socket != null) {
                         try {
                             socket.close();
@@ -158,7 +158,7 @@ public class Process implements Runnable, Listener {
             boolean flag = false;
             AdjacentPeers peer = _peerMgr.searchPeer(connHanlder.getRemoteNeighborId());
             if (peer != null) {
-                BitSet pBitset = (BitSet) peer._receivedParts.clone();
+                BitSet pBitset = (BitSet) peer.received_Parts.clone();
                 pBitset.andNot(file_Manager.getReceivedParts());
                 flag = !pBitset.isEmpty();
             }

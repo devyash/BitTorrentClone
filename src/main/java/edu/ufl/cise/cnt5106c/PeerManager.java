@@ -38,7 +38,7 @@ public class PeerManager implements Runnable {
     //TODO: TRY REPLACING IT
     synchronized public AdjacentPeers searchPeer(int peerId) {
         for (AdjacentPeers peer: _peers) {
-            if (peer._peerId == peerId) {
+            if (peer.id == peerId) {
                 return peer;
             }
         }
@@ -48,8 +48,8 @@ public class PeerManager implements Runnable {
 
     synchronized public void neighborsCompletedDownload() {
         for (AdjacentPeers peer: _peers) {
-            if (peer._receivedParts.cardinality() < _bitmapsize) {
-                LogHelper.getLogger().debug("Peer " + peer._peerId + " has not completed yet");
+            if (peer.received_Parts.cardinality() < _bitmapsize) {
+                LogHelper.getLogger().debug("Peer " + peer.id + " has not completed yet");
                 return;
             }
         }
@@ -71,7 +71,7 @@ public class PeerManager implements Runnable {
             } catch (InterruptedException ex) {}
             ArrayList < AdjacentPeers > interestedPeers = new ArrayList < > ();
             for (AdjacentPeers peer: _peers) {
-                if (peer._interested.get()) {
+                if (peer.interested.get()) {
                     interestedPeers.add(peer);
                 }
             }
@@ -84,7 +84,7 @@ public class PeerManager implements Runnable {
                     public int compare(Object o1, Object o2) {
                         AdjacentPeers ri1 = (AdjacentPeers)(o1);
                         AdjacentPeers ri2 = (AdjacentPeers)(o2);
-                        return (ri2._bytesDownloadedFrom.get() - ri1._bytesDownloadedFrom.get());
+                        return (ri2.bytes_Downloaded_From.get() - ri1.bytes_Downloaded_From.get());
                     }
                 });
             }
@@ -96,8 +96,8 @@ public class PeerManager implements Runnable {
 
             synchronized(this) {
                 for (AdjacentPeers peer: _peers) {
-                    downloadedBytes.put(peer._peerId, peer._bytesDownloadedFrom.longValue());
-                    peer._bytesDownloadedFrom.set(0);
+                    downloadedBytes.put(peer.id, peer.bytes_Downloaded_From.longValue());
+                    peer.bytes_Downloaded_From.set(0);
                 }
                 _preferredPeers.clear();
                 _preferredPeers.addAll(interestedPeers.subList(0, Math.min(pProcess.NumberOfPreferredNeighbors, interestedPeers.size())));
@@ -108,7 +108,7 @@ public class PeerManager implements Runnable {
                 chokedPeers.removeAll(_preferredPeers);
                 Set < Integer > ids = new HashSet < > ();
                 for (AdjacentPeers peer: _preferredPeers) {
-                    ids.add(peer._peerId);
+                    ids.add(peer.id);
                 }
                 chokedPeersIDs.addAll(ids);
                 if (pProcess.NumberOfPreferredNeighbors >= interestedPeers.size()) {
@@ -166,7 +166,7 @@ public class PeerManager implements Runnable {
                 for (Listener listener: _listeners) {
                     Set < Integer > ids = new HashSet < > ();
                     for (AdjacentPeers peer: _optmisticallyUnchokedPeers) {
-                        ids.add(peer._peerId);
+                        ids.add(peer.id);
                     }
                     listener.unchockedPeers(ids);
                 }
