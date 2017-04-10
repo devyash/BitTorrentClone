@@ -11,7 +11,7 @@ import java.util.logging.*;
 
 public class LogHelper {
     private static final String CONF = "/edu/ufl/cise/cnt5106c/conf/logger.properties";
-    private static final LogHelper logHelper = new LogHelper (Logger.getLogger("CNT5106C"));
+    private static final LogHelper logHelper = new LogHelper (Logger.getLogger("BitTorrentClone"));
 
     private final Logger myLogger;
 
@@ -56,7 +56,7 @@ public class LogHelper {
         boolean isFirst = true;
 
         for (Iterator<AdjacentPeers> iterator = neighbors.iterator(); iterator.hasNext();) {
-            int type = iterator.next()._peerId;
+            int type = iterator.next().peer_Id;
             s = isFirst != true ? ", " :"";
             if(isFirst == true)
                 isFirst = false;

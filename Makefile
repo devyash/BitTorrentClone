@@ -1,6 +1,6 @@
 all: build-rel
 
-JAR=target/CNT5106C-1.0.jar
+JAR=target/BitTorrentClone-1.0.jar
 
 build:
 	mvn package

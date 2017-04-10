@@ -69,7 +69,7 @@ public class peerProcess {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(peerInfoFileName));
             String in = reader.readLine();
-            String[] split = in .split(" ");
+            String[] split;
             while ( in != null) {
                 split = in .split(" ");
                 int id = Integer.parseInt(split[0]);
@@ -109,10 +109,10 @@ public class peerProcess {
             peerInfo.readCommonCfgFile();
             peerInfo.readPeerInfoCfgFile();
             for (AdjacentPeers peer: peerInfo.neighbors) {
-                if (peerId == peer._peerId) {
-                    address = peer._peerAddress;
-                    port = peer._peerPort;
-                    hasFile = peer._hasFile;
+                if (peerId == peer.peer_Id) {
+                    address = peer.peer_Address;
+                    port = peer.peer_Port;
+                    hasFile = peer.has_File;
                     break;
                 } else {
                     peersToConnectTo.add(peer);
