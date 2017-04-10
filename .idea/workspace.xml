@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/ActualMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/EventLogger.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/HandShakeMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/LogHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/MessageHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/OutgoingMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/RequestPieceFromNeighbors$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/RequestPieceFromNeighbors.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/peerProcess.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageHandler.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageOrganizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionOrganizer.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionOrganizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/OutgoingMessage.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/OutgoingMessage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,6 +107,7 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionOrganizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageOrganizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/OutgoingMessage.java" />
       </list>
     </option>
   </component>
@@ -539,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491864927417</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Message Organizer">
+      <created>1491866859259</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1491866859259</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -642,7 +637,8 @@
     <MESSAGE value="File Organizer, Peer Manager-&gt; PeerOrganizer &amp; Comments(No variable name change)" />
     <MESSAGE value="Handshake Message Comments added" />
     <MESSAGE value="HandshakeMessage and incomingHandshakeBehaviour Comments added" />
-    <option name="LAST_COMMIT_MESSAGE" value="HandshakeMessage and incomingHandshakeBehaviour Comments added" />
+    <MESSAGE value="Added Message Organizer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Message Organizer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -871,14 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerOrganizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3059">
-          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileOrganizer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
@@ -967,9 +955,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/OutgoingMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="80">
+          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerOrganizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

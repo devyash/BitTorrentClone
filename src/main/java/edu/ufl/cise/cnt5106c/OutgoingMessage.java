@@ -1,11 +1,10 @@
-package edu.ufl.cise.cnt5106c; /**
- * Created by Jiya on 3/30/17.
- */
-
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutput;
-import java.io.OutputStream;
+package edu.ufl.cise.cnt5106c;
+/*
+This class extends the inbuilt DataOutputStream Class and implements the ObjectOutput interface
+*A data output stream lets an application write primitive java data Types
+* ObjectOutput is used for writing objects of type object, strings and arrays.
+ *  */
+import java.io.*;
 
 public class OutgoingMessage extends DataOutputStream implements ObjectOutput {
 
@@ -22,6 +21,7 @@ public class OutgoingMessage extends DataOutputStream implements ObjectOutput {
                 ((ActualMessage) o).write(this);
             }
             else
-                throw new UnsupportedOperationException ("Message not supported.");
+                throw new UnsupportedOperationException ("This Message type is not supported!"
+                        +"Please insert only handshake message or Actual Message instances");
         }
 }
