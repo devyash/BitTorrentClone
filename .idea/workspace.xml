@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="Handshake">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/ConnectionHandler.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionOrganizer.java" />
+    <list default="true" id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="Handshake Message Comments added">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/HandShakeMessage.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/HandShakeMessage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/LogHelper.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/LogHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/EventLogger.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/EventLogger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/HandShakeMessage.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/HandShakeMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Listener.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Listener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerOrganizer.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerOrganizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerProcessThread.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerProcessThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ConnectionOrganizer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionOrganizer.java">
+      <file leaf-file-name="LogHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+            <state relative-caret-position="140">
+              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,23 +33,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileOrganizer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileOrganizer.java">
+      <file leaf-file-name="IncomingHandshakeBehaviour.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="43" column="22" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-520">
+              <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HandShakeMessage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Listener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Listener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HandShakeMessage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/HandShakeMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="200">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,8 +68,8 @@
       <file leaf-file-name="EventLogger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/EventLogger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="82" lean-forward="false" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
+            <state relative-caret-position="-301">
+              <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -146,7 +152,6 @@
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java" />
         <option value="$PROJECT_DIR$/PeerInfo.cfg" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/AdjacentPeers.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerManager.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -155,10 +160,12 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileOrganizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerOrganizer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Listener.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionOrganizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/EventLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/HandShakeMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Listener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" />
       </list>
     </option>
   </component>
@@ -600,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491862605591</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Handshake Message Comments added">
+      <created>1491863808374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1491863808374</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -614,7 +628,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -624,10 +637,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41307816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41307816" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40829346" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2216906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27389985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -702,7 +715,8 @@
     <MESSAGE value="Added Connection Handler" />
     <MESSAGE value="added gitignore" />
     <MESSAGE value="File Organizer, Peer Manager-&gt; PeerOrganizer &amp; Comments(No variable name change)" />
-    <option name="LAST_COMMIT_MESSAGE" value="File Organizer, Peer Manager-&gt; PeerOrganizer &amp; Comments(No variable name change)" />
+    <MESSAGE value="Handshake Message Comments added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handshake Message Comments added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -713,13 +727,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/EventLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -901,13 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="58" column="39" lean-forward="false" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/peer_1001/files/thumb_IMG_2087_1024.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -973,19 +973,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Listener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileOrganizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/EventLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="82" lean-forward="false" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
-          <folding />
+        <state relative-caret-position="74">
+          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -999,13 +993,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/FileOrganizer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/EventLogger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="43" column="22" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-301">
+          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,13 +1006,39 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/HandShakeMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="140">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/HandShakeMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-520">
+          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/Listener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

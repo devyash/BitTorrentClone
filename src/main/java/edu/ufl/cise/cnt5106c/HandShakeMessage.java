@@ -3,10 +3,13 @@ package edu.ufl.cise.cnt5106c;
 import java.io.*;
 import java.nio.ByteBuffer;
 
+
 /*
-Handshake message is established between peer before file sharing starts.
-Handshake message is 32 bits with first 18 bits as "P2PFILESHARINGPROJ"
-and next 10 bits as zero and next 4 bits describing te peer id
+The handshake consists of three parts: handshake header, zero bits, and peer ID.
+The length of the handshake message is 32 bytes.
+The handshake header is 18-byte string ‘P2PFILESHARINGPROJ’,
+which is followed by 10-byte zero bits,
+which is followed by 4-byte peer ID which is the integer representation of the peer ID.
 */
 public class HandShakeMessage{
 

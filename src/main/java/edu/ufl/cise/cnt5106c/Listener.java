@@ -2,7 +2,7 @@ package edu.ufl.cise.cnt5106c;
 import java.util.Collection;
 
 /*
-*This interface  is used to register various events in th code.
+*This interface  is used to register various events in the code.
  *  */
 
 public interface Listener {

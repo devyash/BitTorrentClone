@@ -1,13 +1,11 @@
 package edu.ufl.cise.cnt5106c;
-/**
- * Created by Jiya on 3/30/17.
- */
 
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInput;
+import java.io.*;
 
+/*
+After handshaking, actual message contains 1-byte message type defined below.
+There are 8 types of messages which are defined from value 0 to 7.
+*/
 public class IncomingHandshakeBehaviour extends DataInputStream implements ObjectInput {
 
     final static int CHOKE = 0;
@@ -40,6 +38,7 @@ public class IncomingHandshakeBehaviour extends DataInputStream implements Objec
         }
     }
 
+    //Message with its specified type is created
     public ActualMessage createMessageWithSpecifiedType(int pLength, int type) throws ClassNotFoundException {
         switch (type) {
             case CHOKE:
