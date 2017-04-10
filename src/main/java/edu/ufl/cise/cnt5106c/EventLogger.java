@@ -1,7 +1,7 @@
 package edu.ufl.cise.cnt5106c;
 
 /**
- * Created by Jiya on 2/20/17.
+ * This class is used to log all the events as required by the project description
  */
 public class EventLogger {
 

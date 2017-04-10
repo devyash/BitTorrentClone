@@ -11,7 +11,14 @@ import java.nio.*;
 import java.util.*;
 import java.util.concurrent.*;
 
-public class ConnectionHandler implements Runnable {
+/**
+ * Connection Organizer returns a queue of connections.
+ * It runs all the task one by one from the queue
+ *
+ */
+
+
+public class ConnectionOrganizer implements Runnable {
 
  class ImplementingThread extends Thread {
   private boolean is_Remote_Choked_Flag = true;
@@ -69,7 +76,7 @@ public class ConnectionHandler implements Runnable {
    if (file_Manager.hasPart(request.getPieceIndex())) {
     LogHelper.getLogger().debug("Not Re-requesting piece " + request.getPieceIndex() + " to peer " + remote_Id);
    } else {
-    LogHelper.getLogger().debug("Re - requesting piece " + request.getPieceIndex() + " to peer " + remote_Id);
+    LogHelper.getLogger().debug("Re-requesting piece " + request.getPieceIndex() + " to peer " + remote_Id);
     try {
      out.writeObject(message);
     } catch (IOException e) {
@@ -96,7 +103,7 @@ public class ConnectionHandler implements Runnable {
  private volatile int remote_Id;
  private final BlockingQueue<ActualMessage> queue = new LinkedBlockingQueue<>();
 
- public ConnectionHandler(int my_Id, boolean is_Conn_Neighbor_Flag, int expected_Neighbor_Id, Socket socket, FileOrganizer file_Manager, PeerOrganizer neighbor_Manager) throws IOException {
+ public ConnectionOrganizer(int my_Id, boolean is_Conn_Neighbor_Flag, int expected_Neighbor_Id, Socket socket, FileOrganizer file_Manager, PeerOrganizer neighbor_Manager) throws IOException {
   this.socket = socket;
   this.my_Id = my_Id;
   this.is_Conn_Neighbor_Flag = is_Conn_Neighbor_Flag; //false by default

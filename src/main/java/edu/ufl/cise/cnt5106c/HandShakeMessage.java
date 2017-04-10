@@ -1,12 +1,13 @@
-package edu.ufl.cise.cnt5106c; /**
- * Created by Jiya on 2/16/17.
- */
+package edu.ufl.cise.cnt5106c;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.ByteBuffer;
 
+/*
+Handshake message is established between peer before file sharing starts.
+Handshake message is 32 bits with first 18 bits as "P2PFILESHARINGPROJ"
+and next 10 bits as zero and next 4 bits describing te peer id
+*/
 public class HandShakeMessage{
 
     public static final String header_Name = "P2PFILESHARINGPROJ";
@@ -21,12 +22,12 @@ public class HandShakeMessage{
 
     }
 
-    public HandShakeMessage(byte[] pId) {
+    /*public HandShakeMessage(byte[] pId) {
         if (pId.length > PEER_ID_BYTE)
             throw new IndexOutOfBoundsException("Max length permitted is " + PEER_ID_BYTE);
         else
             peerId = pId;           //check for failure
-    }
+    }*/
 
     public HandShakeMessage(int pId)
     {

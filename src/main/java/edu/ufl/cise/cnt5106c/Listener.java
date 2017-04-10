@@ -1,14 +1,14 @@
 package edu.ufl.cise.cnt5106c;
-
 import java.util.Collection;
 
-/**
- * Created by Jiya on 4/8/17.
- */
+/*
+*This interface  is used to register various events in th code.
+ *  */
+
 public interface Listener {
-    public void fileCompleted();
-    public void pieceArrived (int partIdx);
-    public void neighborsCompletedDownload();
-    public void chockedPeers (Collection<Integer> chokedPeersIds);
-    public void unchockedPeers (Collection<Integer> unchokedPeersIds);
+    void fileCompleted();
+    void pieceArrived (int partIdx);
+    void neighborsCompletedDownload();
+    void chockedPeers (Collection<Integer> chokedPeersIds);
+    void unchockedPeers (Collection<Integer> unchokedPeersIds);
 }

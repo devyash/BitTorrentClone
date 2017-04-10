@@ -1,9 +1,9 @@
 package edu.ufl.cise.cnt5106c;
 
 import java.util.*;
-import java.util.Map.Entry;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.Map.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.*;
 
 public class PeerOrganizer implements Runnable {
     private final int _bitmapsize;

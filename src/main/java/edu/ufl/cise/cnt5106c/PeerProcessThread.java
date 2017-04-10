@@ -25,8 +25,8 @@ public class PeerProcessThread implements Runnable, Listener {
     private final AtomicBoolean _fileCompleted = new AtomicBoolean(false);
     private final AtomicBoolean _peersFileCompleted = new AtomicBoolean(false);
     private final AtomicBoolean _terminate = new AtomicBoolean(false);
-    private final Collection < ConnectionHandler > _connHandlers =
-            Collections.newSetFromMap(new ConcurrentHashMap < ConnectionHandler, Boolean > ());
+    private final Collection < ConnectionOrganizer > _connHandlers =
+            Collections.newSetFromMap(new ConcurrentHashMap < ConnectionOrganizer, Boolean > ());
 
     public PeerProcessThread(int peerId, String address, int port, boolean hasFile, Collection < AdjacentPeers > peerInfo, peerProcess conf) {
         peer_Id = peerId;
@@ -74,7 +74,7 @@ public class PeerProcessThread implements Runnable, Listener {
             while (!_terminate.get()) {
                 try {
                     LogHelper.getLogger().debug(Thread.currentThread().getName() + ": Peer " + peer_Id + " listening on port " + _port + ".");
-                    addConnHandler(new ConnectionHandler(peer_Id, false, -1, serverSocket.accept(), _fileMgr, _peerMgr));
+                    addConnHandler(new ConnectionOrganizer(peer_Id, false, -1, serverSocket.accept(), _fileMgr, _peerMgr));
 
                 } catch (Exception e) {
                     LogHelper.getLogger().warning(e);
@@ -96,7 +96,7 @@ public class PeerProcessThread implements Runnable, Listener {
                 try {
                     LogHelper.getLogger().debug(" Connecting to peer: " + peer.peer_Id + " (" + peer.peer_Address + ":" + peer.peer_Port + ")");
                     socket = new Socket(peer.peer_Address, peer.peer_Port);
-                    if (addConnHandler(new ConnectionHandler(peer_Id, true, peer.peer_Id,
+                    if (addConnHandler(new ConnectionOrganizer(peer_Id, true, peer.peer_Id,
                             socket, _fileMgr, _peerMgr))) {
                         iter.remove();
                         LogHelper.getLogger().debug(" Connected to peer: " + peer.peer_Id + " (" + peer.peer_Address + ":" + peer.peer_Port + ")");
@@ -153,7 +153,7 @@ public class PeerProcessThread implements Runnable, Listener {
 
     @Override
     public synchronized void pieceArrived(int partIdx) {
-        for (ConnectionHandler connHanlder: _connHandlers) {
+        for (ConnectionOrganizer connHanlder: _connHandlers) {
             connHanlder.send(new ActualMessage(HAVE, ByteBuffer.allocate(4).putInt(partIdx).array()));
             boolean flag = false;
             AdjacentPeers peer = _peerMgr.searchPeer(connHanlder.getRemoteNeighborId());
@@ -168,7 +168,7 @@ public class PeerProcessThread implements Runnable, Listener {
         }
     }
 
-    private synchronized boolean addConnHandler(ConnectionHandler connHandler) {
+    private synchronized boolean addConnHandler(ConnectionOrganizer connHandler) {
         if (!_connHandlers.contains(connHandler)) {
             _connHandlers.add(connHandler);
             new Thread(connHandler).start();
@@ -186,7 +186,7 @@ public class PeerProcessThread implements Runnable, Listener {
 
     @Override
     public synchronized void chockedPeers(Collection < Integer > chokedPeersIds) {
-        for (ConnectionHandler ch: _connHandlers) {
+        for (ConnectionOrganizer ch: _connHandlers) {
             if (chokedPeersIds.contains(ch.getRemoteNeighborId())) {
                 LogHelper.getLogger().debug("Choking " + ch.getRemoteNeighborId());
                 ch.send(new ActualMessage(CHOKE, null));
@@ -196,7 +196,7 @@ public class PeerProcessThread implements Runnable, Listener {
 
     @Override
     public synchronized void unchockedPeers(Collection < Integer > unchokedPeersIds) {
-        for (ConnectionHandler ch: _connHandlers) {
+        for (ConnectionOrganizer ch: _connHandlers) {
             if (unchokedPeersIds.contains(ch.getRemoteNeighborId())) {
                 LogHelper.getLogger().debug("Unchoking " + ch.getRemoteNeighborId());
                 ch.send(new ActualMessage(UNCHOKE, null));
