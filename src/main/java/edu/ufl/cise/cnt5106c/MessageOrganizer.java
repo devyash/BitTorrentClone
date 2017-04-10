@@ -1,11 +1,15 @@
-/**
- * Created by Jiya on 3/30/17.
- */
+
 package edu.ufl.cise.cnt5106c;
 import java.nio.ByteBuffer;
 import java.util.BitSet;
+/*
+ * This class is used to organize various kinds of message.
+ * Based on the message type the class performs and organizes/handles various task
+ */
 
-public class MessageHandler {
+
+
+public class MessageOrganizer {
     final static int CHOKE = 0;
     final static int UNCHOKE = 1;
     final static int INTERESTED = 2;
@@ -21,17 +25,19 @@ public class MessageHandler {
     private final PeerOrganizer neighborMgr;
     private final EventLogger eventLogger;
 
-    MessageHandler(int remoteNeighborId, FileOrganizer fileMgr, PeerOrganizer neighborMgr, EventLogger eventLogger) {
-        isChokedByRemoteNeighbor = true;
+    /*Constructor to initialize the organizer class with the different organizer class*/
+    MessageOrganizer(int remoteNeighborId, FileOrganizer fileMgr, PeerOrganizer neighborMgr, EventLogger eventLogger) {
+        this.isChokedByRemoteNeighbor = true;
         this.fileMgr = fileMgr;
         this.neighborMgr = neighborMgr;
         this.remoteNeighborID = remoteNeighborId;
         this.eventLogger = eventLogger;
     }
 
+/*This method is used toe request a piece from a neighbour. It returns the message object */
     private ActualMessage requestPiece() {
         if (isChokedByRemoteNeighbor)
-            LogHelper.getLogger().debug("No parts can be requested to " + remoteNeighborID);
+            LogHelper.getLogger().debug("Since the peer: " + remoteNeighborID+", No parts are allowed to be queried.");
         else {
             BitSet b = new BitSet();
             AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
@@ -46,12 +52,17 @@ public class MessageHandler {
         }
         return null;
     }
-
+    /*This method is used to process the handshake message.
+    Since there is nothing to be done with the handshake message.
+    The handshake message here passed is used only to differentiate the function(overloading)*/
+    //TODO: Unused Handshake Parameter
     public ActualMessage process(HandShakeMessage handshake) {
         BitSet bitset = fileMgr.getReceivedParts();
         return !bitset.isEmpty() ? new ActualMessage(BITFIELD, bitset.toByteArray()) : null;
     }
-
+    /*This method is used to process the actual message.
+    * Based on the various message types different parts
+    * of logic is processed as described in project description*/
     public ActualMessage process(ActualMessage message) {
         switch (message.type) {
             case CHOKE:
@@ -84,7 +95,7 @@ public class MessageHandler {
             }
             case HAVE:
             {
-                ActualMessage have = (ActualMessage) message;
+                ActualMessage have = message;
                 final int pieceId = have.getPieceIndex();
                 eventLogger.have(remoteNeighborID, pieceId);
                 AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
@@ -96,7 +107,7 @@ public class MessageHandler {
             }
             case BITFIELD:
             {
-                ActualMessage bitfield = (ActualMessage) message;
+                ActualMessage bitfield = message;
                 BitSet bitset = BitSet.valueOf(bitfield.payload);
                 AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
                 if (peer != null) {
@@ -108,7 +119,7 @@ public class MessageHandler {
             }
             case REQUEST:
             {
-                ActualMessage request = (ActualMessage) message;
+                ActualMessage request =  message;
                 if (neighborMgr.canUploadToPeer(remoteNeighborID)) {
                     byte[] piece = fileMgr.getPiece(request.getPieceIndex());
                     if (piece != null) {
@@ -120,7 +131,7 @@ public class MessageHandler {
             }
             case PIECE:
             {
-                ActualMessage piece = (ActualMessage) message;
+                ActualMessage piece =  message;
                 fileMgr.addPart(piece.getPieceIndex(), piece.getContent());
                 AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
                 if (peer != null) {

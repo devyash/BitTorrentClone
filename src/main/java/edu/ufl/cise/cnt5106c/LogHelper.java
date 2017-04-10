@@ -1,6 +1,5 @@
 package edu.ufl.cise.cnt5106c;
 
-
 import java.io.*;
 import java.util.Collection;
 import java.util.Iterator;
@@ -63,7 +62,7 @@ public class LogHelper {
         return s;
     }
 
-    public static String getNeighborIDsAsString (Collection<Integer> neighborsIDs) {
+    /*public static String getNeighborIDsAsString (Collection<Integer> neighborsIDs) {
         String s = "";
         boolean isFirst = true;
 
@@ -75,7 +74,7 @@ public class LogHelper {
             s += type;
         }
         return s;
-    }
+    }*/
 
     public synchronized void conf (String message) {
         myLogger.log(Level.CONFIG, message);

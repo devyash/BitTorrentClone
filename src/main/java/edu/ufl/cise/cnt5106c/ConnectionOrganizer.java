@@ -146,7 +146,7 @@ public class ConnectionOrganizer implements Runnable {
    remote_Id = ByteBuffer.wrap(received_Handshake.peerId).getInt();
    Thread.currentThread().setName(getClass().getName() + "-" + remote_Id);
    final EventLogger eventLogger = new EventLogger(my_Id, LogHelper.getLogger());
-   final MessageHandler msgHandler = new MessageHandler(remote_Id, file_Manager, neighbor_Manager, eventLogger);
+   final MessageOrganizer msgHandler = new MessageOrganizer(remote_Id, file_Manager, neighbor_Manager, eventLogger);
    if (is_Conn_Neighbor_Flag && (remote_Id != expected_Neighbor_Id)) {
     throw new Exception("Remote peer id " + remote_Id + " is different from the expected id: " + expected_Neighbor_Id);
    }
