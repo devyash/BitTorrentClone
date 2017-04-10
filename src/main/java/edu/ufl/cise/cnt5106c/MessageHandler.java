@@ -53,7 +53,7 @@ public class MessageHandler {
     }
 
     public ActualMessage process(ActualMessage message) {
-        switch (message.msgType) {
+        switch (message.type) {
             case CHOKE:
             {
                 isChokedByRemoteNeighbor = true;
@@ -97,7 +97,7 @@ public class MessageHandler {
             case BITFIELD:
             {
                 ActualMessage bitfield = (ActualMessage) message;
-                BitSet bitset = BitSet.valueOf(bitfield.msgPayload);
+                BitSet bitset = BitSet.valueOf(bitfield.payload);
                 AdjacentPeers peer = neighborMgr.searchPeer(remoteNeighborID);
                 if (peer != null) {
                     peer._receivedParts = bitset;

@@ -26,12 +26,12 @@ public class ConnectionHandler implements Runnable {
       continue;
      }
      if (remoteNeighborID != PEERIDUNSET) {
-      if (message.msgType == CHOKE) {
+      if (message.type == CHOKE) {
        if (!remoteIsChoked) {
         remoteIsChoked = true;
         sendInternal(message);
        }
-      } else if (message.msgType == UNCHOKE) {
+      } else if (message.type == UNCHOKE) {
        if (remoteIsChoked) {
         remoteIsChoked = false;
         sendInternal(message);
@@ -39,7 +39,7 @@ public class ConnectionHandler implements Runnable {
       } else
        sendInternal(message);
      } else {
-      LogHelper.getLogger().debug("cannot send message of type " + message.msgType + " because the remote peer has not handshaked yet.");
+      LogHelper.getLogger().debug("cannot send message of type " + message.type + " because the remote peer has not handshaked yet.");
      }
     } catch (IOException ex) {
      LogHelper.getLogger().warning(ex);
@@ -118,7 +118,7 @@ public class ConnectionHandler implements Runnable {
  private synchronized void sendInternal(ActualMessage message) throws IOException {
   if (message != null) {
    out.writeObject(message);
-   if (message.msgType == REQUEST) {
+   if (message.type == REQUEST) {
     Timer t = new Timer();
     TimerTask taskNew = new ReqTask((ActualMessage) message, fileMgr, out, message, remoteNeighborID);
     t.schedule(taskNew, neighborMgr.pProcess.UnchokingInterval * 1000 * 2);
