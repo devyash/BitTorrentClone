@@ -1,77 +1,77 @@
-/**
- * Created by Jiya on 4/3/17.
- */
+/*
+* The Connection Handler Class has 2 inner classes ImplementingThread and RequestTask
+* This Class manages the connection of a peer
+* */
 
 package edu.ufl.cise.cnt5106c;
 
-
-import java.io.IOException;
-import java.net.Socket;
-import java.nio.ByteBuffer;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.io.*;
+import java.net.*;
+import java.nio.*;
+import java.util.*;
+import java.util.concurrent.*;
 
 public class ConnectionHandler implements Runnable {
 
- class ThreadImplementer extends Thread {
-  private boolean remoteIsChoked = true;
+ class ImplementingThread extends Thread {
+  private boolean is_Remote_Choked_Flag = true;
+
   public void run() {
-   this.setName(getClass().getName() + "-" + remoteNeighborID + "-sending thread");
+   this.setName(getClass().getName() + ":" + remote_Id + ": This is Sending thread");
    while (true) {
     try {
      final ActualMessage message = queue.take();
      if (message == null) {
       continue;
      }
-     if (remoteNeighborID != PEERIDUNSET) {
+     if (remote_Id != PEERIDUNSET) {
       if (message.type == CHOKE) {
-       if (!remoteIsChoked) {
-        remoteIsChoked = true;
+       if (!is_Remote_Choked_Flag) {
+        is_Remote_Choked_Flag = true;
         sendInternal(message);
        }
       } else if (message.type == UNCHOKE) {
-       if (remoteIsChoked) {
-        remoteIsChoked = false;
+       if (is_Remote_Choked_Flag) {
+        is_Remote_Choked_Flag = false;
         sendInternal(message);
        }
       } else
        sendInternal(message);
      } else {
-      LogHelper.getLogger().debug("cannot send message of type " + message.type + " because the remote peer has not handshaked yet.");
+      LogHelper.getLogger().debug("The message handler was not able to send " + message.type + " as the remote peer has not been Hand shaked");
      }
     } catch (IOException ex) {
      LogHelper.getLogger().warning(ex);
-    } catch (Exception ex) {}
+    } catch (Exception ex) {
+    }
    }
   }
  }
 
- class ReqTask extends TimerTask {
+ class RequestTask extends TimerTask {
 
-  private final ActualMessage _request;
-  private final FileManager _fileMgr;
-  private final OutgoingMessage _out;
-  private final int _remotePeerId;
-  private final ActualMessage _message;
+  private final ActualMessage request;
+  private final FileManager file_Manager;
+  private final OutgoingMessage out;
+  private final int remote_Id;
+  private final ActualMessage message;
 
-  ReqTask(ActualMessage request, FileManager fileMgr, OutgoingMessage out, ActualMessage message, int remotePeerId) {
+  RequestTask(ActualMessage request, FileManager file_Manager, OutgoingMessage out, ActualMessage message, int remote_Id) {
    super();
-   _request = request;
-   _fileMgr = fileMgr;
-   _out = out;
-   _remotePeerId = remotePeerId;
-   _message = message;
+   this.request = request;
+   this.file_Manager = file_Manager;
+   this.out = out;
+   this.remote_Id = remote_Id;
+   this.message = message;
   }
 
   public void run() {
-   if (_fileMgr.hasPart(_request.getPieceIndex())) {
-    LogHelper.getLogger().debug("Not rerequesting piece " + _request.getPieceIndex() + " to peer " + _remotePeerId);
+   if (file_Manager.hasPart(request.getPieceIndex())) {
+    LogHelper.getLogger().debug("Not Re-requesting piece " + request.getPieceIndex() + " to peer " + remote_Id);
    } else {
-    LogHelper.getLogger().debug("Rerequesting piece " + _request.getPieceIndex() + " to peer " + _remotePeerId);
+    LogHelper.getLogger().debug("Re - requesting piece " + request.getPieceIndex() + " to peer " + remote_Id);
     try {
-     _out.writeObject(_message);
+     out.writeObject(message);
     } catch (IOException e) {
      e.printStackTrace();
     }
@@ -86,29 +86,29 @@ public class ConnectionHandler implements Runnable {
  private final static int REQUEST = 6;
  private static final int PEERIDUNSET = -1;
 
- private final int myLocalID;
+ private final int my_Id;
  private final Socket socket;
  private final OutgoingMessage out;
- private final FileManager fileMgr;
- private final PeerManager neighborMgr;
- private final boolean isConnectingNeighbor;
- private final int expectedRemoteNeighborID;
- private volatile int remoteNeighborID;
- private final BlockingQueue < ActualMessage > queue = new LinkedBlockingQueue < > ();
+ private final FileManager file_Manager;
+ private final PeerManager neighbor_Manager;
+ private final boolean is_Conn_Neighbor_Flag;
+ private final int expected_Neighbor_Id;
+ private volatile int remote_Id;
+ private final BlockingQueue<ActualMessage> queue = new LinkedBlockingQueue<>();
 
- public ConnectionHandler(int myLocalID, boolean isConnectingNeighbor, int expectedRemoteNeighborID, Socket socket, FileManager fileMgr, PeerManager neighborMgr) throws IOException {
+ public ConnectionHandler(int my_Id, boolean is_Conn_Neighbor_Flag, int expected_Neighbor_Id, Socket socket, FileManager file_Manager, PeerManager neighbor_Manager) throws IOException {
   this.socket = socket;
-  this.myLocalID = myLocalID;
-  this.isConnectingNeighbor = isConnectingNeighbor; //false by default
-  this.expectedRemoteNeighborID = expectedRemoteNeighborID; //-1
-  this.fileMgr = fileMgr;
-  this.neighborMgr = neighborMgr;
+  this.my_Id = my_Id;
+  this.is_Conn_Neighbor_Flag = is_Conn_Neighbor_Flag; //false by default
+  this.expected_Neighbor_Id = expected_Neighbor_Id; //-1
+  this.file_Manager = file_Manager;
+  this.neighbor_Manager = neighbor_Manager;
   out = new OutgoingMessage(socket.getOutputStream());
-  remoteNeighborID = PEERIDUNSET;
+  remote_Id = PEERIDUNSET;
  }
 
  public int getRemoteNeighborId() {
-  return remoteNeighborID;
+  return remote_Id;
  }
 
  public void send(final ActualMessage message) {
@@ -120,36 +120,36 @@ public class ConnectionHandler implements Runnable {
    out.writeObject(message);
    if (message.type == REQUEST) {
     Timer t = new Timer();
-    TimerTask taskNew = new ReqTask((ActualMessage) message, fileMgr, out, message, remoteNeighborID);
-    t.schedule(taskNew, neighborMgr.pProcess.UnchokingInterval * 1000 * 2);
+    TimerTask taskNew = new RequestTask(message, file_Manager, out, message, remote_Id);
+    t.schedule(taskNew, neighbor_Manager.pProcess.UnchokingInterval * 1000 * 2);
    }
   }
  }
 
- @Override
+
  public void run() {
-  ThreadImplementer t = new ThreadImplementer();
+  ImplementingThread t = new ImplementingThread();
   t.start();
   try {
    final IncomingHandshakeBehaviour in = new IncomingHandshakeBehaviour(socket.getInputStream());
    // Send handshake
-   out.writeObject(new HandShakeMessage(myLocalID));
+   out.writeObject(new HandShakeMessage(my_Id));
    // Receive and check handshake
-   HandShakeMessage rcvdHandshake = (HandShakeMessage) in .readObject();
-   remoteNeighborID = ByteBuffer.wrap(rcvdHandshake.peerId).getInt();
-   Thread.currentThread().setName(getClass().getName() + "-" + remoteNeighborID);
-   final EventLogger eventLogger = new EventLogger(myLocalID, LogHelper.getLogger());
-   final MessageHandler msgHandler = new MessageHandler(remoteNeighborID, fileMgr, neighborMgr, eventLogger);
-   if (isConnectingNeighbor && (remoteNeighborID != expectedRemoteNeighborID)) {
-    throw new Exception("Remote peer id " + remoteNeighborID + " does not match with the expected id: " + expectedRemoteNeighborID);
+   HandShakeMessage received_Handshake = (HandShakeMessage) in.readObject();
+   remote_Id = ByteBuffer.wrap(received_Handshake.peerId).getInt();
+   Thread.currentThread().setName(getClass().getName() + "-" + remote_Id);
+   final EventLogger eventLogger = new EventLogger(my_Id, LogHelper.getLogger());
+   final MessageHandler msgHandler = new MessageHandler(remote_Id, file_Manager, neighbor_Manager, eventLogger);
+   if (is_Conn_Neighbor_Flag && (remote_Id != expected_Neighbor_Id)) {
+    throw new Exception("Remote peer id " + remote_Id + " is different from the expected id: " + expected_Neighbor_Id);
    }
    // Handshake successful
-   eventLogger.ConnectWithPeer(remoteNeighborID, isConnectingNeighbor);
+   eventLogger.ConnectWithPeer(remote_Id, is_Conn_Neighbor_Flag);
 
-   sendInternal(msgHandler.process(rcvdHandshake));
+   sendInternal(msgHandler.process(received_Handshake));
    while (true) {
     try {
-     sendInternal(msgHandler.process((ActualMessage) in .readObject()));
+     sendInternal(msgHandler.process((ActualMessage) in.readObject()));
     } catch (Exception ex) {
      LogHelper.getLogger().warning(ex);
      break;
@@ -160,8 +160,9 @@ public class ConnectionHandler implements Runnable {
   } finally {
    try {
     socket.close();
-   } catch (Exception e) {}
+   } catch (Exception e) {
+   }
   }
-  LogHelper.getLogger().warning(Thread.currentThread().getName() + " terminating, messages will no longer be accepted.");
+  LogHelper.getLogger().warning(Thread.currentThread().getName() + "Terminated!");
  }
 }
