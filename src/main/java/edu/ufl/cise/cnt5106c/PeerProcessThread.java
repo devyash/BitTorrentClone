@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 
-public class Process implements Runnable, Listener {
+public class PeerProcessThread implements Runnable, Listener {
     private final static int CHOKE = 0;
     private final static int UNCHOKE = 1;
     private final static int NOTINTERESTED = 3;
@@ -19,8 +19,8 @@ public class Process implements Runnable, Listener {
     private final int _port;
     private final boolean has_File;
     private final peerProcess _conf;
-    private final FileManager _fileMgr;
-    private final PeerManager _peerMgr;
+    private final FileOrganizer _fileMgr;
+    private final PeerOrganizer _peerMgr;
     private final EventLogger _eventLogger;
     private final AtomicBoolean _fileCompleted = new AtomicBoolean(false);
     private final AtomicBoolean _peersFileCompleted = new AtomicBoolean(false);
@@ -28,14 +28,14 @@ public class Process implements Runnable, Listener {
     private final Collection < ConnectionHandler > _connHandlers =
             Collections.newSetFromMap(new ConcurrentHashMap < ConnectionHandler, Boolean > ());
 
-    public Process(int peerId, String address, int port, boolean hasFile, Collection < AdjacentPeers > peerInfo, peerProcess conf) {
+    public PeerProcessThread(int peerId, String address, int port, boolean hasFile, Collection < AdjacentPeers > peerInfo, peerProcess conf) {
         peer_Id = peerId;
         _port = port;
         has_File = hasFile;
         _conf = conf;
         //fixed after merging CommonProperties ReadProperties
-        //System.out.println("\nFileManager obj "+_conf.FileName +", "+ _conf.FileSize +", "+ _conf.PieceSize +", "+ _conf.UnchokingInterval);
-        _fileMgr = new FileManager(peer_Id, _conf.FileName, _conf.FileSize, _conf.PieceSize, _conf.UnchokingInterval * 1000);
+        //System.out.println("\nFileOrganizer obj "+_conf.FileName +", "+ _conf.FileSize +", "+ _conf.PieceSize +", "+ _conf.UnchokingInterval);
+        _fileMgr = new FileOrganizer(peer_Id, _conf.FileName, _conf.FileSize, _conf.PieceSize, _conf.UnchokingInterval * 1000);
         ArrayList < AdjacentPeers > remotePeers = new ArrayList < > (peerInfo);
         for (AdjacentPeers ri: remotePeers) {
             if (ri.peer_Id == peerId) {
@@ -44,7 +44,7 @@ public class Process implements Runnable, Listener {
                 break;
             }
         }
-        _peerMgr = new PeerManager(peer_Id, remotePeers, _fileMgr.getBitmapSize(), _conf);
+        _peerMgr = new PeerOrganizer(peer_Id, remotePeers, _fileMgr.getBitmapSize(), _conf);
         _eventLogger = new EventLogger(peerId, LogHelper.getLogger());
         _fileCompleted.set(has_File);
     }
@@ -61,7 +61,7 @@ public class Process implements Runnable, Listener {
             LogHelper.getLogger().debug("No file found with the peer!");
         }
 
-        // Start PeerManager Thread
+        // Start PeerOrganizer Thread
         Thread t = new Thread(_peerMgr);
         t.setName(_peerMgr.getClass().getName());
         t.start();

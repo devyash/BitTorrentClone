@@ -51,12 +51,12 @@ public class ConnectionHandler implements Runnable {
  class RequestTask extends TimerTask {
 
   private final ActualMessage request;
-  private final FileManager file_Manager;
+  private final FileOrganizer file_Manager;
   private final OutgoingMessage out;
   private final int remote_Id;
   private final ActualMessage message;
 
-  RequestTask(ActualMessage request, FileManager file_Manager, OutgoingMessage out, ActualMessage message, int remote_Id) {
+  RequestTask(ActualMessage request, FileOrganizer file_Manager, OutgoingMessage out, ActualMessage message, int remote_Id) {
    super();
    this.request = request;
    this.file_Manager = file_Manager;
@@ -89,14 +89,14 @@ public class ConnectionHandler implements Runnable {
  private final int my_Id;
  private final Socket socket;
  private final OutgoingMessage out;
- private final FileManager file_Manager;
- private final PeerManager neighbor_Manager;
+ private final FileOrganizer file_Manager;
+ private final PeerOrganizer neighbor_Manager;
  private final boolean is_Conn_Neighbor_Flag;
  private final int expected_Neighbor_Id;
  private volatile int remote_Id;
  private final BlockingQueue<ActualMessage> queue = new LinkedBlockingQueue<>();
 
- public ConnectionHandler(int my_Id, boolean is_Conn_Neighbor_Flag, int expected_Neighbor_Id, Socket socket, FileManager file_Manager, PeerManager neighbor_Manager) throws IOException {
+ public ConnectionHandler(int my_Id, boolean is_Conn_Neighbor_Flag, int expected_Neighbor_Id, Socket socket, FileOrganizer file_Manager, PeerOrganizer neighbor_Manager) throws IOException {
   this.socket = socket;
   this.my_Id = my_Id;
   this.is_Conn_Neighbor_Flag = is_Conn_Neighbor_Flag; //false by default

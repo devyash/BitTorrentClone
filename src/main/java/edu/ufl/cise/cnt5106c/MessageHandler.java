@@ -17,11 +17,11 @@ public class MessageHandler {
 
     private boolean isChokedByRemoteNeighbor;
     private final int remoteNeighborID;
-    private final FileManager fileMgr;
-    private final PeerManager neighborMgr;
+    private final FileOrganizer fileMgr;
+    private final PeerOrganizer neighborMgr;
     private final EventLogger eventLogger;
 
-    MessageHandler(int remoteNeighborId, FileManager fileMgr, PeerManager neighborMgr, EventLogger eventLogger) {
+    MessageHandler(int remoteNeighborId, FileOrganizer fileMgr, PeerOrganizer neighborMgr, EventLogger eventLogger) {
         isChokedByRemoteNeighbor = true;
         this.fileMgr = fileMgr;
         this.neighborMgr = neighborMgr;

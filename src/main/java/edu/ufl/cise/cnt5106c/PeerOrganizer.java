@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class PeerManager implements Runnable {
+public class PeerOrganizer implements Runnable {
     private final int _bitmapsize;
     private final EventLogger _eventLogger;
     private final List < AdjacentPeers > _peers = new ArrayList < > ();
@@ -15,7 +15,7 @@ public class PeerManager implements Runnable {
     public peerProcess pProcess;
     public final AtomicBoolean _randomlySelectPreferred = new AtomicBoolean(false);
 
-    PeerManager(int peerId, Collection < AdjacentPeers > peers, int bitmapsize, peerProcess conf) {
+    PeerOrganizer(int peerId, Collection < AdjacentPeers > peers, int bitmapsize, peerProcess conf) {
         _peers.addAll(peers);
         pProcess = conf;
         _optUnchoker = new OptimisticUnchoker(pProcess.NumberOfPreferredNeighbors * 1000);

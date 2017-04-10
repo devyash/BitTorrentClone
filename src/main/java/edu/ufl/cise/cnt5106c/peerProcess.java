@@ -124,7 +124,7 @@ public class peerProcess {
             return;
         }
 
-        Process peerProc = new Process(peerId, address, port, hasFile, peerInfo.neighbors, peerInfo);
+        PeerProcessThread peerProc = new PeerProcessThread(peerId, address, port, hasFile, peerInfo.neighbors, peerInfo);
         peerProc.init();
         Thread t = new Thread(peerProc);
         t.setName("peerProcess-" + peerId);

@@ -1,19 +1,9 @@
 package edu.ufl.cise.cnt5106c;
 
-import java.util.BitSet;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Properties;
-import java.io.File;
-import java.io.FileOutputStream;
+import java.util.*;
+import java.io.*;
 
-//new changes
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-public class FileManager {
+public class FileOrganizer {
 
     private BitSet received_Parts;
     private final Collection < Listener > _listeners = new LinkedList < > ();
@@ -27,7 +17,7 @@ public class FileManager {
     public final File _partsDir;
     private static final String partsLocation = "files/parts/";
 
-    FileManager(int peerId, String fileName, int fileSize, int partSize, long unchokingInterval) {
+    FileOrganizer(int peerId, String fileName, int fileSize, int partSize, long unchokingInterval) {
         _dPartSize = partSize;
         _bitsetSize = (int) Math.ceil(fileSize / _dPartSize);
         LogHelper.getLogger().debug("File size set to " + fileSize + "\tPart size set to " + _dPartSize + "\tBitset size set to " + _bitsetSize);
@@ -196,6 +186,10 @@ public class FileManager {
         return null;
     }
 
+    /*
+    splitFile splits the incoming file into parts depending on
+    the number of parts given in the argument
+    */
     public void splitFile(int partSize) {
         FileInputStream inputStream;
         String newFileName;
@@ -229,6 +223,9 @@ public class FileManager {
         }
     }
 
+    /*
+    MergeFile function merges the files which are being split
+    */
     public void mergeFile(int numParts) {
         File ofile = _file;
         FileOutputStream fos;
