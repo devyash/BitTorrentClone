@@ -20,7 +20,6 @@ public class IncomingHandshakeBehaviour extends DataInputStream implements Objec
     public IncomingHandshakeBehaviour(InputStream in ) {
         super( in );
     }
-
     private boolean handshakeRequest = false;
 
     @Override

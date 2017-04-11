@@ -12,9 +12,10 @@ import java.util.*;
 * */
 
 public class ActualMessage{
+    public byte[] payload;
     public int length;
     public int type;
-    public byte[] payload;
+
 
     ActualMessage(int type, byte[] payload){
         /*Constructor that set the message length according to payload size */

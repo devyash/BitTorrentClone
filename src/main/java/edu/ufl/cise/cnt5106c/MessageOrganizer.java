@@ -2,12 +2,11 @@
 package edu.ufl.cise.cnt5106c;
 import java.nio.ByteBuffer;
 import java.util.BitSet;
+
 /*
  * This class is used to organize various kinds of message.
  * Based on the message type the class performs and organizes/handles various task
  */
-
-
 
 public class MessageOrganizer {
     final static int CHOKE = 0;

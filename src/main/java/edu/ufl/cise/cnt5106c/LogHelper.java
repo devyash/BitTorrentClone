@@ -38,7 +38,6 @@ public class LogHelper {
         return logHelper;
     }
 
-    //check
     public static void configure(int peerId) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Properties properties = new Properties();
         properties.load(LogHelper.class.getResourceAsStream(CONF));
@@ -61,20 +60,6 @@ public class LogHelper {
         }
         return s;
     }
-
-    /*public static String getNeighborIDsAsString (Collection<Integer> neighborsIDs) {
-        String s = "";
-        boolean isFirst = true;
-
-        for (Iterator<Integer> iterator = neighborsIDs.iterator(); iterator.hasNext();) {
-            int type = iterator.next();
-            s = isFirst != true ? ", " :"";
-            if(isFirst == true)
-                isFirst = false;
-            s += type;
-        }
-        return s;
-    }*/
 
     public synchronized void conf (String message) {
         myLogger.log(Level.CONFIG, message);

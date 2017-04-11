@@ -1,5 +1,5 @@
 /*
-* The Connection Handler Class has 2 inner classes ImplementingThread and RequestTask
+* The ConnectionOrganizer Class has 2 inner classes ImplementingThread and RequestTask
 * This Class manages the connection of a peer
 * */
 
@@ -58,10 +58,10 @@ public class ConnectionOrganizer implements Runnable {
  class RequestTask extends TimerTask {
 
   private final ActualMessage request;
-  private final FileOrganizer file_Manager;
-  private final OutgoingMessage out;
   private final int remote_Id;
+  private final OutgoingMessage out;
   private final ActualMessage message;
+  private final FileOrganizer file_Manager;
 
   RequestTask(ActualMessage request, FileOrganizer file_Manager, OutgoingMessage out, ActualMessage message, int remote_Id) {
    super();
@@ -93,15 +93,15 @@ public class ConnectionOrganizer implements Runnable {
  private final static int REQUEST = 6;
  private static final int PEERIDUNSET = -1;
 
- private final int my_Id;
- private final Socket socket;
  private final OutgoingMessage out;
- private final FileOrganizer file_Manager;
+ private final Socket socket;
  private final PeerOrganizer neighbor_Manager;
+ private final FileOrganizer file_Manager;
  private final boolean is_Conn_Neighbor_Flag;
- private final int expected_Neighbor_Id;
  private volatile int remote_Id;
  private final BlockingQueue<ActualMessage> queue = new LinkedBlockingQueue<>();
+ private final int my_Id;
+ private final int expected_Neighbor_Id;
 
  public ConnectionOrganizer(int my_Id, boolean is_Conn_Neighbor_Flag, int expected_Neighbor_Id, Socket socket, FileOrganizer file_Manager, PeerOrganizer neighbor_Manager) throws IOException {
   this.socket = socket;
@@ -133,7 +133,6 @@ public class ConnectionOrganizer implements Runnable {
   }
  }
 
-
  public void run() {
   ImplementingThread t = new ImplementingThread();
   t.start();
@@ -150,9 +149,9 @@ public class ConnectionOrganizer implements Runnable {
    if (is_Conn_Neighbor_Flag && (remote_Id != expected_Neighbor_Id)) {
     throw new Exception("Remote peer id " + remote_Id + " is different from the expected id: " + expected_Neighbor_Id);
    }
+
    // Handshake successful
    eventLogger.ConnectWithPeer(remote_Id, is_Conn_Neighbor_Flag);
-
    sendInternal(msgHandler.process(received_Handshake));
    while (true) {
     try {

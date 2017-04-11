@@ -1,12 +1,11 @@
 package edu.ufl.cise.cnt5106c;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-
+import java.io.*;
+import java.util.*;
+/*
+* This is the main class that is required as per the description which calls the peerProcessThread.
+*
+* */
 public class peerProcess {
 
     private static final String commonCfgFileName = "Common.cfg";

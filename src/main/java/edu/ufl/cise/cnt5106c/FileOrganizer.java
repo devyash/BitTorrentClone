@@ -4,19 +4,17 @@ import java.util.*;
 import java.io.*;
 
 public class FileOrganizer {
-
-    private BitSet received_Parts;
+    
     private final Collection < Listener > _listeners = new LinkedList < > ();
-    //private Destination _destination;
     private final double _dPartSize;
-    private final int _bitsetSize;
     private final RequestPieceFromNeighbors _partsBeingReq;
-
-    //new changes
+    private BitSet received_Parts;
+    private final int _bitsetSize;
+    
     private final File _file;
-    public final File _partsDir;
     private static final String partsLocation = "files/parts/";
-
+    public final File _partsDir;
+    
     FileOrganizer(int peerId, String fileName, int fileSize, int partSize, long unchokingInterval) {
         _dPartSize = partSize;
         _bitsetSize = (int) Math.ceil(fileSize / _dPartSize);
@@ -24,11 +22,9 @@ public class FileOrganizer {
         received_Parts = new BitSet(_bitsetSize);
         _partsBeingReq = new RequestPieceFromNeighbors(_bitsetSize, unchokingInterval);
 
-        //new changes
         _partsDir = new File("./peer_" + peerId + "/" + partsLocation + fileName);
         _partsDir.mkdirs();
         _file = new File(_partsDir.getParent() + "/../" + fileName);
-        //_destination = new Destination(peerId, fileName);
     }
 
     public synchronized void addPart(int partIdx, byte[] part) {
@@ -39,9 +35,7 @@ public class FileOrganizer {
 
         if (isNewPiece) {
 
-            //new changes
             File currDir = _partsDir;
-            //File currDir = _destination._partsDir;
 
             FileOutputStream fos;
             File outputfile = new File(currDir.getAbsolutePath() + "/" + partIdx);
@@ -60,9 +54,7 @@ public class FileOrganizer {
         }
         if (isFileCompleted()) {
 
-            //new changes
             mergeFile(received_Parts.cardinality());
-            //_destination.mergeFile(received_Parts.cardinality());
             for (Listener listener: _listeners) {
                 listener.fileCompleted();
             }
@@ -109,17 +101,11 @@ public class FileOrganizer {
     }
 
     public void splitFile() {
-
-        //new changes
         splitFile((int) _dPartSize);
-        //_destination.splitFile((int) _dPartSize);
     }
 
     public byte[][] getAllPieces() {
-
-        //new changes
         return getAllPartsAsByteArrays();
-        //return _destination.getAllPartsAsByteArrays();
     }
 
     public int getBitmapSize() {
@@ -135,6 +121,9 @@ public class FileOrganizer {
         return true;
     }
 
+    /*
+    The below code gets all the file parts as byte arrays
+    */
     public byte[][] getAllPartsAsByteArrays() {
         File[] listOfFiles = _partsDir.listFiles();
         byte[][] byteArray = new byte[listOfFiles.length][getPartAsByteArray(1).length];
@@ -256,5 +245,4 @@ public class FileOrganizer {
             exception.printStackTrace();
         }
     }
-
 }

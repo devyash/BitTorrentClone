@@ -1,13 +1,13 @@
 package edu.ufl.cise.cnt5106c;
-
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.net.Socket;
+import java.util.*;
 import java.nio.ByteBuffer;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicBoolean;
+
 
 
 public class PeerProcessThread implements Runnable, Listener {
@@ -19,27 +19,25 @@ public class PeerProcessThread implements Runnable, Listener {
     private final int _port;
     private final boolean has_File;
     private final peerProcess _conf;
+    private final AtomicBoolean _terminate = new AtomicBoolean(false);
+    private final Collection < ConnectionOrganizer > _connHandlers =
+            Collections.newSetFromMap(new ConcurrentHashMap < ConnectionOrganizer, Boolean > ());
     private final FileOrganizer _fileMgr;
     private final PeerOrganizer _peerMgr;
     private final EventLogger _eventLogger;
     private final AtomicBoolean _fileCompleted = new AtomicBoolean(false);
     private final AtomicBoolean _peersFileCompleted = new AtomicBoolean(false);
-    private final AtomicBoolean _terminate = new AtomicBoolean(false);
-    private final Collection < ConnectionOrganizer > _connHandlers =
-            Collections.newSetFromMap(new ConcurrentHashMap < ConnectionOrganizer, Boolean > ());
+
 
     public PeerProcessThread(int peerId, String address, int port, boolean hasFile, Collection < AdjacentPeers > peerInfo, peerProcess conf) {
         peer_Id = peerId;
         _port = port;
         has_File = hasFile;
         _conf = conf;
-        //fixed after merging CommonProperties ReadProperties
-        //System.out.println("\nFileOrganizer obj "+_conf.FileName +", "+ _conf.FileSize +", "+ _conf.PieceSize +", "+ _conf.UnchokingInterval);
         _fileMgr = new FileOrganizer(peer_Id, _conf.FileName, _conf.FileSize, _conf.PieceSize, _conf.UnchokingInterval * 1000);
         ArrayList < AdjacentPeers > remotePeers = new ArrayList < > (peerInfo);
         for (AdjacentPeers ri: remotePeers) {
             if (ri.peer_Id == peerId) {
-                // rmeove myself
                 remotePeers.remove(ri);
                 break;
             }

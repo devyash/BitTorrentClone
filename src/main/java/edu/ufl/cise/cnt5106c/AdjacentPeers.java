@@ -3,19 +3,23 @@ package edu.ufl.cise.cnt5106c;
 import java.util.*;
 import java.util.concurrent.atomic.*;
 
-/**
- *  This class identifies all the peers and checks if the peer has the file required
- */
+/*
+his class identifies all the peers and checks if the peer has the file required
+*/
 
 public class AdjacentPeers {
-    public final int peer_Id;
-    public final String peer_Address;
-    public final int peer_Port;
-    public final boolean has_File;
-    public AtomicInteger download_Bytes = new AtomicInteger (0);;
-    public BitSet received_Parts;
-    public AtomicBoolean interested  = new AtomicBoolean (false);
 
+    public final String peer_Address;
+    public AtomicInteger download_Bytes = new AtomicInteger (0);;
+    public final boolean has_File;
+    public BitSet received_Parts;
+    public final int peer_Port;
+    public AtomicBoolean interested  = new AtomicBoolean (false);
+    public final int peer_Id;
+
+    /*
+    Every adjacent peer has peer id, peer address and its own port
+    */
     public AdjacentPeers(int peer_Id, String peer_Address, int peer_Port, boolean has_File) {
         this.peer_Id = peer_Id;
         this.peer_Address = peer_Address;
