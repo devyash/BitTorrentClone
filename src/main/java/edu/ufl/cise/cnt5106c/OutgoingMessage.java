@@ -21,7 +21,6 @@ public class OutgoingMessage extends DataOutputStream implements ObjectOutput {
                 ((ActualMessage) o).write(this);
             }
             else
-                throw new UnsupportedOperationException ("This Message type is not supported!"
-                        +"Please insert only handshake message or Actual Message instances");
+                throw new UnsupportedOperationException ("Please provide either handshake message or Actual Message type");
         }
 }
