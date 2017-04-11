@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="BitTorrentClone" />
         <module name="CNT5106C" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BitTorrentClone" target="1.7" />
       <module name="CNT5106C" target="1.7" />
     </bytecodeTargetLevel>
   </component>
