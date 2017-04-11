@@ -38,13 +38,37 @@ public class LogHelper {
         return logHelper;
     }
 
+    public synchronized void info (String message) {
+        myLogger.log (Level.INFO, message);
+    }
+
+    public synchronized void debug (String message) {
+        myLogger.log(Level.FINE, message);
+    }
+
     public static void configure(int peerId) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Properties properties = new Properties();
         properties.load(LogHelper.class.getResourceAsStream(CONF));
+        String format = "java.util.logging.FileHandler.formatter";
+        String level = "java.util.logging.FileHandler.level";
         Handler handler = new FileHandler ("log_peer_" + peerId + ".log");
-        handler.setFormatter((Formatter) Class.forName(properties.getProperty("java.util.logging.FileHandler.formatter")).newInstance());
-        handler.setLevel(Level.parse(properties.getProperty("java.util.logging.FileHandler.level")));
+        handler.setFormatter((Formatter) Class.forName(properties.getProperty(format)).newInstance());
+        handler.setLevel(Level.parse(properties.getProperty(level)));
         logHelper.myLogger.addHandler(handler);
+    }
+
+    private static String stackTraceToString (Throwable t) {
+        final Writer stringWriter = new StringWriter();
+        t.printStackTrace(new PrintWriter(stringWriter));
+        return stringWriter.toString();
+    }
+
+    public synchronized void warning (String message) {
+        myLogger.log(Level.WARNING, message);
+    }
+
+    public synchronized void warning (Throwable exception) {
+        myLogger.log(Level.WARNING, stackTraceToString (exception));
     }
 
     public static String getNeighborsAsString (Collection<AdjacentPeers> neighbors) {
@@ -61,37 +85,11 @@ public class LogHelper {
         return s;
     }
 
-    public synchronized void conf (String message) {
-        myLogger.log(Level.CONFIG, message);
-    }
-
-    public synchronized void severe (String message) {
+    public synchronized void error (String message) {
         myLogger.log(Level.SEVERE, message);
     }
 
-    public synchronized void severe (Throwable exception) {
+    public synchronized void error (Throwable exception) {
         myLogger.log(Level.SEVERE, stackTraceToString (exception));
-    }
-
-    public synchronized void warning (String message) {
-        myLogger.log(Level.WARNING, message);
-    }
-
-    public synchronized void warning (Throwable exception) {
-        myLogger.log(Level.WARNING, stackTraceToString (exception));
-    }
-
-    public synchronized void info (String message) {
-        myLogger.log (Level.INFO, message);
-    }
-
-    public synchronized void debug (String message) {
-        myLogger.log(Level.FINE, message);
-    }
-
-    private static String stackTraceToString (Throwable t) {
-        final Writer stringWriter = new StringWriter();
-        t.printStackTrace(new PrintWriter(stringWriter));
-        return stringWriter.toString();
     }
 }
