@@ -1,55 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="Message Organizer, Outgoing Message, PeerOrganizer, PeerProcess changed">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/CNT5106C-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/peerProcess.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/peerProcess.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+    <list default="true" id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -226,24 +179,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="BitTorrentClone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNT5106C" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BitTorrentClone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peer_1001" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -569,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491869213361</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Git ignore">
+      <created>1491869833395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1491869833395</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -592,13 +534,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26100153" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.68261564" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6172249" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27389985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27389985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -675,7 +617,8 @@
     <MESSAGE value="Added Message Organizer" />
     <MESSAGE value="Outgoing Message" />
     <MESSAGE value="Message Organizer, Outgoing Message, PeerOrganizer, PeerProcess changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Message Organizer, Outgoing Message, PeerOrganizer, PeerProcess changed" />
+    <MESSAGE value="Added Git ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Git ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
