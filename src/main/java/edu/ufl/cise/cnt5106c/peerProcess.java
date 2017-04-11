@@ -19,32 +19,29 @@ public class peerProcess {
     public void readCommonCfgFile() {
         //TODO Put status in logger - reading started
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(commonCfgFileName));
-            String in = reader.readLine();
-            while ( in != null) {
-                String[] split = in .split(" ");
-                switch (split[0]) {
-                    case "NumberOfPreferredNeighbors":
-                        NumberOfPreferredNeighbors = Integer.parseInt(split[1]);
-                        break;
-                    case "UnchokingInterval":
-                        UnchokingInterval = Integer.parseInt(split[1]);
-                        break;
-                    case "OptimisticUnchokingInterval":
-                        OptimisticUnchokingInterval = Integer.parseInt(split[1]);
-                        break;
-                    case "FileName":
-                        FileName = split[1];
-                        break;
-                    case "FileSize":
-                        FileSize = Integer.parseInt(split[1]);
-                        break;
-                    case "PieceSize":
-                        PieceSize = Integer.parseInt(split[1]);
-                        break;
-                } in = reader.readLine();
+            //Reads the Common.cfg
+            //Common.cfg
+            //NumberOfPreferredNeighbors 2
+            // UnchokingInterval 5
+            // OptimisticUnchokingInterval 15
+            // FileName TheFile.dat
+            // FileSize 10000232
+            // PieceSize 32768
+            Properties commonProp = new Properties();
+            String  thisLine = null;
+            BufferedReader br = new BufferedReader(new FileReader(commonCfgFileName));
+            while ((thisLine = br.readLine()) != null) {
+                //System.out.println(thisLine);
+                String[] hm=thisLine.split(" ");
+                commonProp.put(hm[0],hm[1]);
             }
-            reader.close();
+            br.close();
+            this.FileName=commonProp.getProperty("FileName");
+            this.FileSize=Integer.parseInt(commonProp.getProperty("FileSize"));
+            this.PieceSize=Integer.parseInt(commonProp.getProperty("PieceSize"));
+            this.OptimisticUnchokingInterval=Integer.parseInt(commonProp.getProperty("OptimisticUnchokingInterval"));
+            this.UnchokingInterval=Integer.parseInt(commonProp.getProperty("UnchokingInterval"));
+            this.NumberOfPreferredNeighbors=Integer.parseInt(commonProp.getProperty("NumberOfPreferredNeighbors"));
         } catch (Exception e) {
             //TODO Put status in logger - reading error
             e.printStackTrace();
@@ -52,6 +49,7 @@ public class peerProcess {
         }
         //TODO Put status in logger - reading done
     }
+
 
     private static final String peerInfoFileName = "PeerInfo.cfg";
     private int num_wait;

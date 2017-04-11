@@ -2,9 +2,183 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/OutgoingMessage.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/OutgoingMessage.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/thumb_IMG_2087_1024.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1003/files/thumb_IMG_2087_1024.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1004/files/thumb_IMG_2087_1024.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1005/files/thumb_IMG_2087_1024.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/thumb_IMG_2087_1024.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/peerProcess.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/peerProcess.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerProcessThread.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerProcessThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common.cfg" afterPath="$PROJECT_DIR$/Common.cfg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,7 +189,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="peerProcess.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-180">
+              <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -112,9 +299,10 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/LogHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/MessageOrganizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/ConnectionOrganizer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/RequestPieceFromNeighbors.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/PeerProcessThread.java" />
+        <option value="$PROJECT_DIR$/Common.cfg" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java" />
       </list>
     </option>
   </component>
@@ -174,9 +362,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,42 +386,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="peer_1003" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CNT5106C" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BitTorrentClone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cnt5106c" />
+              <option name="myItemId" value="files" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -562,7 +724,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491869833395</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="made little changes to peerProcessThread">
+      <created>1491886485013</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1491886485013</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -588,11 +757,10 @@
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.61563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34449762" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13875598" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28983307" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29438543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -605,6 +773,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -669,7 +838,8 @@
     <MESSAGE value="Outgoing Message" />
     <MESSAGE value="Message Organizer, Outgoing Message, PeerOrganizer, PeerProcess changed" />
     <MESSAGE value="Added Git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Git ignore" />
+    <MESSAGE value="made little changes to peerProcessThread" />
+    <option name="LAST_COMMIT_MESSAGE" value="made little changes to peerProcessThread" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -761,13 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/startAll.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -813,11 +976,6 @@
             <element signature="e#3443#3444#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/peer_1003/files/thumb_IMG_2087_1024.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/IncomingHandshakeBehaviour.java">
@@ -896,16 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/peer_1004/files/thumb_IMG_2087_1024.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -915,7 +1063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2960">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -931,6 +1078,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2967">
           <caret line="44" column="102" lean-forward="false" selection-start-line="44" selection-start-column="102" selection-end-line="44" selection-end-column="102" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peer_1003/files/thumb_IMG_2087_1024.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
