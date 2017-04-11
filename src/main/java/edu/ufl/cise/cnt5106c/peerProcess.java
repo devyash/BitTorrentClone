@@ -1,7 +1,12 @@
 package edu.ufl.cise.cnt5106c;
 
 import java.io.*;
+import java.net.ConnectException;
+import java.net.Socket;
 import java.util.*;
+
+import static java.lang.Thread.sleep;
+
 /*
 * This is the main class that is required as per the description which calls the peerProcessThread.
 *
@@ -16,7 +21,7 @@ public class peerProcess {
     public int FileSize;
     public int PieceSize;
 
-    public void read_Common() {
+    public void readCommonCfg() {
         //TODO Put status in logger - reading started
         try {
             //Reads the Common.cfg
@@ -60,7 +65,7 @@ public class peerProcess {
     /**
      * Read in variables from config file, set all appropriate variables
      */
-    public void readPeerInfoCfgFile() {
+    public void readPeerInfoCfg() {
         //TODO Put status in logger - reading peerconfig started
 
         num_wait = 0;
@@ -94,7 +99,7 @@ public class peerProcess {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         if (args.length != 1) {
-            LogHelper.getLogger().severe("Incorrect format! Run like this 'java peerProcess 1001'. ");
+            LogHelper.getLogger().error("Incorrect format! Run like this 'java peerProcess 1001'. ");
         }
         final int peerId = Integer.parseInt(args[0]);
         LogHelper.configure(peerId);
@@ -104,8 +109,8 @@ public class peerProcess {
         peerProcess peerInfo = new peerProcess();
         Collection < AdjacentPeers > peersToConnectTo = new LinkedList < > ();
         try {
-            peerInfo.read_Common();
-            peerInfo.readPeerInfoCfgFile();
+            peerInfo.readCommonCfg();
+            peerInfo.readPeerInfoCfg();
             for (AdjacentPeers peer: peerInfo.neighbors) {
                 if (peerId == peer.peer_Id) {
                     address = peer.peer_Address;
@@ -114,24 +119,88 @@ public class peerProcess {
                     break;
                 } else {
                     peersToConnectTo.add(peer);
-                    LogHelper.getLogger().conf("Read configuration for peer: " + peer);
                 }
             }
         } catch (Exception ex) {
-            LogHelper.getLogger().severe(ex);
+            LogHelper.getLogger().error(ex);
             return;
         }
 
+        //initialize peerProcessThread and register it to listeners
         PeerProcessThread peerProc = new PeerProcessThread(peerId, address, port, hasFile, peerInfo.neighbors, peerInfo);
-        peerProc.init();
-        Thread t = new Thread(peerProc);
-        t.setName("peerProcess-" + peerId);
+        peerProc.fileOrganizer.registerListener(peerProc);
+        peerProc.peerOrganizer.registerListener(peerProc);
+
+        if (hasFile) {
+            LogHelper.getLogger().debug("The file is being split!");
+            peerProc.fileOrganizer.splitFile();
+            peerProc.fileOrganizer.setAllParts();
+        } else {
+            LogHelper.getLogger().debug("No file found with the peer!");
+        }
+        Thread t = new Thread(peerProc.peerOrganizer);
+        t.setName(peerProc.peerOrganizer.getClass().getName());
         t.start();
 
+        Thread curr = new Thread(peerProc);
+        curr.setName("peerProcess-" + peerId);
+        curr.start();
+
         LogHelper.getLogger().debug("Connecting to " + peersToConnectTo.size() + " peers.");
-        peerProc.connectToPeers(peersToConnectTo);
+
+        //Connect to peers
+
+        Iterator < AdjacentPeers > iter = peersToConnectTo.iterator();
+        while (iter.hasNext()) {
+            do {
+                Socket socket = null;
+                AdjacentPeers peer = iter.next();
+                try {
+                    LogHelper.getLogger().debug(" Connecting to peer: " + peer.peer_Id + " (" + peer.peer_Address + ":" + peer.peer_Port + ")");
+                    socket = new Socket(peer.peer_Address, peer.peer_Port);
+                    ConnectionOrganizer con = new ConnectionOrganizer(peerId, true, peer.peer_Id,
+                            socket, peerProc.fileOrganizer, peerProc.peerOrganizer);
+
+                    if (!peerProc.connOrganizer.contains(con)) {
+                        peerProc.connOrganizer.add(con);
+                        new Thread(con).start();
+                        try {
+                            sleep(10);
+                        } catch (InterruptedException e) {
+                            LogHelper.getLogger().warning(e);
+                        }
+                    } else {
+                        LogHelper.getLogger().debug("Peer " + con.getRemoteNeighborId() + " is trying to connect but a connection already exists");
+                    }
+                    iter.remove();
+                    LogHelper.getLogger().debug(" Connected to peer: " + peer.peer_Id + " (" + peer.peer_Address + ":" + peer.peer_Port + ")");
+                } catch (ConnectException ex) {
+                    LogHelper.getLogger().warning("could not connect to peer " + peer.peer_Id + " at address " + peer.peer_Address + ":" + peer.peer_Port);
+                    if (socket != null) {
+                        try {
+                            socket.close();
+                        } catch (IOException ex1) {}
+                    }
+                } catch (IOException ex) {
+                    if (socket != null) {
+                        try {
+                            socket.close();
+                        } catch (IOException ex1) {}
+                    }
+                    LogHelper.getLogger().warning(ex);
+                }
+            }
+            while (iter.hasNext());
+
+            // Keep trying until they all connect
+            iter = peersToConnectTo.iterator();
+            try {
+                sleep(5);
+            } catch (InterruptedException ex) {}
+        }
+
         try {
-            Thread.sleep(5);
+            sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
