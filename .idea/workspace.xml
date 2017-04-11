@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/11" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/12" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/13" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/14" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/15" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/16" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/17" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/18" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/19" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/20" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/21" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/22" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/23" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/24" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/25" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/26" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/27" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1001/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
+    <list default="true" id="0b0f79d2-2322-41db-8b5d-6899b36000f8" name="Default" comment="upda">
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/0" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/1" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1002/files/parts/thumb_IMG_2087_1024.jpg/10" afterPath="" />
@@ -175,9 +147,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/8" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/parts/thumb_IMG_2087_1024.jpg/9" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/peer_1006/files/thumb_IMG_2087_1024.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/peerProcess.class" afterPath="$PROJECT_DIR$/target/classes/edu/ufl/cise/cnt5106c/peerProcess.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common.cfg" afterPath="$PROJECT_DIR$/Common.cfg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -193,8 +163,8 @@
       <file leaf-file-name="peerProcess.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
-              <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+            <state relative-caret-position="323">
+              <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -206,8 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CNT5</find>
-      <find>CNT51</find>
       <find>CNT510</find>
       <find>CNT5106c</find>
       <find>CNT5106</find>
@@ -236,6 +204,8 @@
       <find>MessageHandler</find>
       <find>_fileMgr</find>
       <find>_conf</find>
+      <find>readCommonCfgFil</find>
+      <find>readCommonCfgFile</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -262,6 +232,7 @@
       <replace>connection_organizers</replace>
       <replace>MessageOrganizer</replace>
       <replace>config</replace>
+      <replace>read_Common</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -386,11 +357,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="peer_1003" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CNT5106C" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitTorrentClone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnt5106c" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -731,7 +728,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491886485013</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Changed read common peer info">
+      <created>1491927241740</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1491927241740</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -754,13 +758,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26100153" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.61563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13875598" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8500797" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29438543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -771,9 +776,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -839,10 +843,13 @@
     <MESSAGE value="Message Organizer, Outgoing Message, PeerOrganizer, PeerProcess changed" />
     <MESSAGE value="Added Git ignore" />
     <MESSAGE value="made little changes to peerProcessThread" />
-    <option name="LAST_COMMIT_MESSAGE" value="made little changes to peerProcessThread" />
+    <MESSAGE value="Changed read common peer info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed read common peer info" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1099,8 +1106,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ufl/cise/cnt5106c/peerProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+        <state relative-caret-position="323">
+          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

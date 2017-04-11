@@ -16,7 +16,7 @@ public class peerProcess {
     public int FileSize;
     public int PieceSize;
 
-    public void readCommonCfgFile() {
+    public void read_Common() {
         //TODO Put status in logger - reading started
         try {
             //Reads the Common.cfg
@@ -62,6 +62,7 @@ public class peerProcess {
      */
     public void readPeerInfoCfgFile() {
         //TODO Put status in logger - reading peerconfig started
+
         num_wait = 0;
         try {
             BufferedReader reader = new BufferedReader(new FileReader(peerInfoFileName));
@@ -103,7 +104,7 @@ public class peerProcess {
         peerProcess peerInfo = new peerProcess();
         Collection < AdjacentPeers > peersToConnectTo = new LinkedList < > ();
         try {
-            peerInfo.readCommonCfgFile();
+            peerInfo.read_Common();
             peerInfo.readPeerInfoCfgFile();
             for (AdjacentPeers peer: peerInfo.neighbors) {
                 if (peerId == peer.peer_Id) {
