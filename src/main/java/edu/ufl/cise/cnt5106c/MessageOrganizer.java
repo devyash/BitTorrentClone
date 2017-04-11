@@ -34,7 +34,8 @@ public class MessageOrganizer {
         this.eventLogger = eventLogger;
     }
 
-/*This method is used toe request a piece from a neighbour. It returns the message object */
+/*This method is used toe request a piece from a neighbour.
+ It returns the message object */
     private ActualMessage requestPiece() {
         if (isChokedByRemoteNeighbor)
             LogHelper.getLogger().debug("Since the peer: " + remoteNeighborID+", No parts are allowed to be queried.");

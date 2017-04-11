@@ -96,7 +96,7 @@ public class peerProcess {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         if (args.length != 1) {
-            LogHelper.getLogger().severe("the number of arguments passed to the program is " + args.length + " while it should be 1.\nUsage: java peerProcess peerId");
+            LogHelper.getLogger().severe("Incorrect format! Run like this 'java peerProcess 1001'. ");
         }
         final int peerId = Integer.parseInt(args[0]);
         LogHelper.configure(peerId);

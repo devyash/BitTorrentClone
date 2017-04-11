@@ -5,6 +5,9 @@ import java.util.Map.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 
+/*This class is used to manage and organize all the peer threads.
+* */
+
 public class PeerOrganizer implements Runnable {
     private final int _bitmapsize;
     private final EventLogger _eventLogger;
@@ -15,6 +18,7 @@ public class PeerOrganizer implements Runnable {
     public peerProcess pProcess;
     public final AtomicBoolean _randomlySelectPreferred = new AtomicBoolean(false);
 
+    /*Peer Organizer Thread that takes the current peer and various other initialization parameters*/
     PeerOrganizer(int peerId, Collection < AdjacentPeers > peers, int bitmapsize, peerProcess conf) {
         _peers.addAll(peers);
         pProcess = conf;
@@ -23,17 +27,18 @@ public class PeerOrganizer implements Runnable {
         _eventLogger = new EventLogger(peerId, LogHelper.getLogger());
     }
 
-    //cant replace this
+    /*This function is used to create a new instance of the peer*/
+    //TODO: Check here the peerAddress is hardcoded
     synchronized boolean canUploadToPeer(int peerId) {
         AdjacentPeers peerInfo = new AdjacentPeers(peerId, "127.0.0.1", 0, false);
         return (_preferredPeers.contains(peerInfo) ||
                 _optUnchoker._optmisticallyUnchokedPeers.contains(peerInfo));
     }
-
-    //cant replace this
-    synchronized void fileCompleted() {
-        _randomlySelectPreferred.set(true);
-    }
+//TODO: This is used to set a flag that randomly select peers(Not called though)
+//    //cant replace this
+//    synchronized void fileCompleted() {
+//        _randomlySelectPreferred.set(true);
+//    }
 
     //TODO: TRY REPLACING IT
     synchronized public AdjacentPeers searchPeer(int peerId) {
@@ -162,7 +167,7 @@ public class PeerOrganizer implements Runnable {
                     LogHelper.getLogger().debug("STATE: OPT UNCHOKED(1):" + LogHelper.getNeighborsAsString(_optmisticallyUnchokedPeers));
                     _eventLogger.updateOptimisticallyUnchokedNeighbor(LogHelper.getNeighborsAsString(_optmisticallyUnchokedPeers));
                 }
-                //already simplified
+                /*Used to select a listner*/
                 for (Listener listener: _listeners) {
                     Set < Integer > ids = new HashSet < > ();
                     for (AdjacentPeers peer: _optmisticallyUnchokedPeers) {
