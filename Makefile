@@ -1,16 +1,15 @@
-all: build-rel
+JFLAGS = -g
+JC = javac
+.SUFFIXES: .java .class
+.java.class:
+	$(JC) $(JFLAGS) $*.java
 
-JAR=target/BitTorrentClone-1.0.jar
+CLASSES = \
+	peerProcess.java 
+    
+default: classes
 
-build:
-	mvn package
-
-build-rel:
-	ant -f build/build.xml
-
-tar-rel: clean
-	ant -f build/build.xml tar
+classes: $(CLASSES:.java=.class)
 
 clean:
-	rm -rf *.log *.log* *.zip
-	# mvn clean dependency:copy-dependencies
+	$(RM) *.class
